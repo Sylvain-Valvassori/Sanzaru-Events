@@ -1,0 +1,235 @@
+@use 'variables' as *;
+
+
+// ----| Bouton navigation dans le footer de section |----
+.btn-nav{
+    display: flex;
+    justify-items: center;
+    align-items: flex-end;
+    gap: 1rem;
+    
+    &:hover { 
+        .losange{
+            fill: $clr-cuivre;
+        }
+        h3{
+            color: $clr-cuivre;
+        }
+    }
+    &-beige{
+        .losange{
+            fill: $clr-light-beige;
+            width: 1.473rem;
+            height: 2rem;
+        }
+        h3{
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            color: $clr-light-beige;
+        }
+    }
+    &-blue{
+        .losange{
+            fill: $clr-light-blue;
+            width: 1.473rem;
+            height: 2rem;
+        }
+        h3{
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            color: $clr-light-blue;
+        }
+    }
+}
+// ----| Bouton Contact |----
+.btn-contact{
+
+    padding: 1.5rem 3rem;
+    border-radius: 4rem;
+
+    font-size: 1.4rem;
+    font-family: $fnt-main;
+    text-transform: uppercase;
+
+    transition: background-color 300ms, color 300ms;
+
+    &-beige{
+        border: solid .1rem $clr-dark-beige;
+        color: $clr-dark-beige;
+
+        &:hover{
+            color: $clr-dark-blue;
+            background-color: $clr-dark-beige;
+        }
+    }
+    &-blue{
+        border: solid .1rem $clr-dark-blue;
+        color: $clr-dark-blue;
+
+        &:hover{
+            color: $clr-light-beige;
+            background-color: $clr-dark-blue;
+        }
+    }
+}
+
+// ----| Line square Separator|----
+.separator{
+
+    width: 100%;
+    // height:1rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    
+    
+    .lineSquare{
+        position: relative;
+        width:100%;
+        height: .1rem;
+
+        
+        &::before{
+            content: '';
+            position: absolute;
+            top: 0; 
+            left: 0;
+
+            width: .7rem;
+            aspect-ratio: 1;
+
+            transform: translateY(-50%) rotate(45deg) ;
+        }
+        &::after{
+            content: '';
+            position: absolute;
+            top: 0; 
+            right: 0;
+    
+            width: .7rem;
+            aspect-ratio: 1;
+
+            transform: translateY(-50%) rotate(45deg) ;
+        }
+
+
+        &-beige{
+            background-color: $clr-light-beige;
+            &::before{ 
+                background-color: $clr-light-beige;
+            }
+            &::after{
+                background-color: $clr-light-beige;
+            }
+        }
+        &-blue{
+            background-color: $clr-light-blue;
+            &::before{ 
+                background-color:$clr-light-blue;
+            }
+            &::after{
+                background-color: $clr-light-blue;
+            }
+        }
+    }
+}
+// ----| Footer section |----
+.footerSection{
+    z-index: $avant-plan;
+
+    width: 100%;
+    height: 6.6rem;
+    align-self: flex-end;
+    nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .informationsFooter{
+            display: flex;
+            gap: 4rem;
+            
+            font-size: 1rem;
+            font-family: "Stolzl-Regular";
+            color: $clr-light-blue;
+            text-transform: uppercase;
+        }
+    }
+}
+
+// ----| Controller slides show & arrow|----
+.controllerSlideShow{
+    
+    max-width: 8rem;
+    height: fit-content;
+    margin-right: 4rem;
+    padding-bottom: 2rem;
+
+
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+
+    .arrow{
+        cursor: inherit;
+        
+        width:2rem;
+        aspect-ratio: 1;
+        fill: rgba($clr-dark-blue, .3);
+        
+        &:last-child{
+            margin-left: 2rem;
+        }
+        
+        &-active{
+            cursor: pointer;
+            
+            fill: $clr-dark-blue;
+            transition: fill 300ms;
+            
+            &:hover{
+                fill: $clr-electric-blue;
+            }
+        }
+    }
+}
+// ----| Cards slides show |----
+.cardStaff{
+    width: 17.2rem;
+    height: fit-content;
+    margin-left: 4rem;
+    display: inline-block;
+
+
+    &:first-child{
+        margin: 0;
+    }
+    .imgStaff{
+        height: 24rem;
+        width: 100%;
+        border-radius: 17.2rem 17.2rem 17.2rem 0;
+
+        background-image: url(/src/images/Flower-1.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .posteStaff{
+        font-size: 1.4rem;
+        font-family: "Stolzl-Light";
+        letter-spacing: .1em;
+
+        margin: 2rem 0 0 0;
+        padding-bottom: .6rem;
+        border-bottom: .1rem solid rgba($clr-electric-blue, .3);
+    }
+    .nameStaff{
+        font-size: 1.8rem;
+        font-family: "Stolzl-Regular";
+        text-transform: uppercase;
+
+        margin-top: 2rem;
+    }
+    
+}

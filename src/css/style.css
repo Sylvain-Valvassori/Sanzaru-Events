@@ -1,0 +1,631 @@
+html, body, a, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, textarea, pre, iframe, hr, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+ul {
+  list-style: none;
+}
+
+button, input, select {
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  /* now 1.5rem = 15px */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+img, video {
+  height: auto;
+  max-width: 100%;
+}
+
+iframe {
+  border: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td, th {
+  padding: 0;
+}
+
+address {
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Stolzl-Book";
+  src: url("../fonts/Stolzl/Stolzl-Book.woff2") format("woff2"), url("../fonts/Stolzl/Stolzl-Book.woff") format("woff");
+}
+@font-face {
+  font-family: "Stolzl-Bold";
+  src: url("../fonts/Stolzl/Stolzl-Bold.woff2") format("woff2"), url("../fonts/Stolzl/Stolzl-Bold.woff") format("woff");
+}
+@font-face {
+  font-family: "Stolzl-Regular";
+  src: url("../fonts/Stolzl/Stolzl-Regular.woff2") format("woff2"), url("../fonts/Stolzl/Stolzl-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "Stolzl-Medium";
+  src: url("../fonts/Stolzl/Stolzl-Medium.woff2") format("woff2"), url("../fonts/Stolzl/Stolzl-Medium.woff") format("woff");
+}
+@font-face {
+  font-family: "Stolzl-Light";
+  src: url("../fonts/Stolzl/Stolzl-Light.woff2") format("woff2"), url("../fonts/Stolzl/Stolzl-Light.woff") format("woff");
+}
+@font-face {
+  font-family: "Stolzl-Thin";
+  src: url("../fonts/Stolzl/Stolzl-Thin.woff2") format("woff2"), url("../fonts/Stolzl/Stolzl-Thin.woff") format("woff");
+}
+.btn-nav {
+  display: flex;
+  justify-items: center;
+  align-items: flex-end;
+  gap: 1rem;
+}
+.btn-nav:hover .losange {
+  fill: #c06f57;
+}
+.btn-nav:hover h3 {
+  color: #c06f57;
+}
+.btn-nav-beige .losange {
+  fill: #fdf4ee;
+  width: 1.473rem;
+  height: 2rem;
+}
+.btn-nav-beige h3 {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  color: #fdf4ee;
+}
+.btn-nav-blue .losange {
+  fill: #232d40;
+  width: 1.473rem;
+  height: 2rem;
+}
+.btn-nav-blue h3 {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  color: #232d40;
+}
+
+.btn-contact {
+  padding: 1.5rem 3rem;
+  border-radius: 4rem;
+  font-size: 1.4rem;
+  font-family: "Stolzl-Regular", sans-serif;
+  text-transform: uppercase;
+  transition: background-color 300ms, color 300ms;
+}
+.btn-contact-beige {
+  border: solid 0.1rem #fde8db;
+  color: #fde8db;
+}
+.btn-contact-beige:hover {
+  color: #151f36;
+  background-color: #fde8db;
+}
+.btn-contact-blue {
+  border: solid 0.1rem #151f36;
+  color: #151f36;
+}
+.btn-contact-blue:hover {
+  color: #fdf4ee;
+  background-color: #151f36;
+}
+
+.separator {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+.separator .lineSquare {
+  position: relative;
+  width: 100%;
+  height: 0.1rem;
+}
+.separator .lineSquare::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0.7rem;
+  aspect-ratio: 1;
+  transform: translateY(-50%) rotate(45deg);
+}
+.separator .lineSquare::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0.7rem;
+  aspect-ratio: 1;
+  transform: translateY(-50%) rotate(45deg);
+}
+.separator .lineSquare-beige {
+  background-color: #fdf4ee;
+}
+.separator .lineSquare-beige::before {
+  background-color: #fdf4ee;
+}
+.separator .lineSquare-beige::after {
+  background-color: #fdf4ee;
+}
+.separator .lineSquare-blue {
+  background-color: #232d40;
+}
+.separator .lineSquare-blue::before {
+  background-color: #232d40;
+}
+.separator .lineSquare-blue::after {
+  background-color: #232d40;
+}
+
+.footerSection {
+  z-index: 2;
+  width: 100%;
+  height: 6.6rem;
+  align-self: flex-end;
+}
+.footerSection nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footerSection nav .informationsFooter {
+  display: flex;
+  gap: 4rem;
+  font-size: 1rem;
+  font-family: "Stolzl-Regular";
+  color: #232d40;
+  text-transform: uppercase;
+}
+
+.controllerSlideShow {
+  max-width: 8rem;
+  height: fit-content;
+  margin-right: 4rem;
+  padding-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+.controllerSlideShow .arrow {
+  cursor: inherit;
+  width: 2rem;
+  aspect-ratio: 1;
+  fill: rgba(21, 31, 54, 0.3);
+}
+.controllerSlideShow .arrow:last-child {
+  margin-left: 2rem;
+}
+.controllerSlideShow .arrow-active {
+  cursor: pointer;
+  fill: #151f36;
+  transition: fill 300ms;
+}
+.controllerSlideShow .arrow-active:hover {
+  fill: #3c63aa;
+}
+
+.cardStaff {
+  width: 17.2rem;
+  height: fit-content;
+  margin-left: 4rem;
+  display: inline-block;
+}
+.cardStaff:first-child {
+  margin: 0;
+}
+.cardStaff .imgStaff {
+  height: 24rem;
+  width: 100%;
+  border-radius: 17.2rem 17.2rem 17.2rem 0;
+  background-image: url(/src/images/Flower-1.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.cardStaff .posteStaff {
+  font-size: 1.4rem;
+  font-family: "Stolzl-Light";
+  letter-spacing: 0.1em;
+  margin: 2rem 0 0 0;
+  padding-bottom: 0.6rem;
+  border-bottom: 0.1rem solid rgba(60, 99, 170, 0.3);
+}
+.cardStaff .nameStaff {
+  font-size: 1.8rem;
+  font-family: "Stolzl-Regular";
+  text-transform: uppercase;
+  margin-top: 2rem;
+}
+
+html {
+  color: #fdf4ee;
+  font-family: "Stolzl-Regular", sans-serif;
+  background-color: #c1d9d9;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #151f36;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+}
+@media screen and (max-width: 992px) {
+  body {
+    background-color: #00ff4c;
+  }
+}
+@media screen and (max-width: 767px) {
+  body {
+    background-color: red;
+  }
+}
+
+.home {
+  width: 100%;
+  height: calc(100vh - 2rem);
+  position: relative;
+  padding: 3rem 7rem;
+  border-radius: 4rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.home header {
+  z-index: 2;
+  height: 12rem;
+  width: 100%;
+  align-self: flex-start;
+  display: grid;
+  grid-template-columns: 33.33% 33.33% 33.33%;
+  justify-items: stretch;
+  align-items: center;
+}
+.home header .logoSanzaruEvents {
+  width: 15rem;
+  height: 100%;
+}
+.home header .pictoMonkey {
+  height: 12rem;
+  aspect-ratio: 1;
+}
+.home header nav {
+  justify-self: end;
+  min-width: max-content;
+  height: 2rem;
+}
+.home header nav ul li {
+  display: inline;
+  margin-left: 2rem;
+  font-size: 1.6rem;
+  font-family: "Stolzl-Regular", sans-serif;
+  text-transform: uppercase;
+  transition: color 300ms;
+}
+.home header nav ul li:first-child {
+  margin: 0;
+}
+.home header nav ul li:hover {
+  color: #c06f57;
+}
+@media screen and (max-width: 992px) {
+  .home header nav ul li {
+    display: block;
+    margin: 1rem 0;
+  }
+}
+.home h2 {
+  z-index: 2;
+  width: clamp(70rem, 100%, 100rem);
+  text-align: center;
+  font-size: 8.4rem;
+  font-family: "Stolzl-Book";
+  line-height: 10.1rem;
+  letter-spacing: 1.65rem;
+  text-transform: uppercase;
+}
+@media screen and (max-width: 992px) {
+  .home h2 {
+    font-size: 6rem;
+    line-height: 8rem;
+    letter-spacing: 1.2rem;
+  }
+}
+.home .backgroundHome {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(/src/images/1.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.home .backgroundHome .layerColor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(35, 45, 64, 0.5);
+}
+.home .backgroundHome .layerColor::before {
+  content: "";
+  position: absolute;
+  top: -54rem;
+  left: -154rem;
+  width: 298rem;
+  height: 300rem;
+  background: radial-gradient(47.97% 47.97% at 52.03% 50%, #151f36 0%, rgba(35, 45, 64, 0) 59.9%);
+}
+.about {
+  width: 100%;
+  height: 100%;
+  padding: 6rem 7rem 3rem 7rem;
+  border-radius: 4rem;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  background-color: #fdf4ee;
+  color: #232d40;
+}
+.about h2 {
+  max-width: 62.8rem;
+  width: 100%;
+  font-size: 8.4rem;
+  font-family: "Stolzl-Book";
+  line-height: 8.8rem;
+  margin-bottom: 6rem;
+}
+.about .containerAboutInfos {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 6rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 12rem;
+}
+.about .containerAboutInfos .contentLeft {
+  max-width: 62.8rem;
+  width: 100%;
+  height: 100%;
+}
+.about .containerAboutInfos .contentLeft h3 {
+  font-size: 2rem;
+  font-family: "Stolzl-Regular";
+  line-height: 3rem;
+  text-transform: uppercase;
+  margin-bottom: 4rem;
+}
+.about .containerAboutInfos .contentLeft p {
+  font-size: 1.4rem;
+  font-family: "Stolzl-Light";
+  line-height: 2.24rem;
+  column-count: 2;
+  column-gap: 4em;
+}
+.about .containerAboutInfos .contentRight {
+  max-width: 50%;
+  width: 100%;
+  height: max-content;
+  margin-top: -10rem;
+  margin-right: -7rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+.about .containerAboutInfos .contentRight .headingContentRight {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.about .containerAboutInfos .contentRight .headingContentRight h3 {
+  max-width: 100%;
+  padding-bottom: 2rem;
+  font-size: 2.4rem;
+  font-family: "Stolzl-Light";
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.about .containerAboutInfos .contentRight .containerSlideShow {
+  height: 100%;
+  width: 100%;
+  margin-top: 2rem;
+}
+.about .containerAboutInfos .contentRight .containerSlideShow .slideShow {
+  width: fit-content;
+  height: 36.2rem;
+  display: flex;
+}
+@media screen and (max-width: 992px) {
+  .about .containerAboutInfos {
+    flex-wrap: wrap;
+  }
+  .about .containerAboutInfos .contentLeft {
+    margin-bottom: 8rem;
+    max-width: 100%;
+  }
+  .about .containerAboutInfos .contentRight {
+    max-width: 100%;
+  }
+}
+
+.services {
+  width: 100%;
+  height: 100%;
+  padding: 7rem 7rem 3rem 7rem;
+  border-radius: 4rem;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #232d40;
+  color: #fdf4ee;
+}
+.services h2 {
+  width: 100%;
+  font-size: 8.4rem;
+  font-family: "Stolzl-Book";
+  line-height: 8.8rem;
+}
+.services .servicesInfos {
+  margin-left: calc(100% - 65rem);
+  max-width: 65rem;
+  width: 100%;
+  font-size: 1.4rem;
+  font-family: "Stolzl-Light";
+  line-height: 2.24rem;
+  column-count: 2;
+  column-gap: 4em;
+}
+@media screen and (max-width: 992px) {
+  .services .servicesInfos {
+    margin-top: 4rem;
+    margin-left: 0;
+    max-width: 100%;
+  }
+}
+.services .containerServices {
+  height: 40rem;
+  width: 100%;
+  margin: 8rem 0;
+  background-color: #fdf4ee;
+}
+
+.contact {
+  width: 100%;
+  height: 100%;
+  padding: 7rem 7rem 3rem 7rem;
+  border-radius: 4rem;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #fde8db;
+  color: #232d40;
+  overflow: hidden;
+}
+.contact h2 {
+  z-index: 2;
+  flex: 1 0 100%;
+  /* flex-grow, flex-shrink, flex-basis */
+  font-size: 8.4rem;
+  font-family: "Stolzl-Book";
+  line-height: 8.8rem;
+  margin-bottom: 8rem;
+}
+.contact .contentContact {
+  z-index: 2;
+  height: 28.9rem;
+  width: 100%;
+  margin-bottom: 8rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+.contact .contentContact h3 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-family: "Stolzl-Medium";
+}
+.contact .contentContact p, .contact .contentContact li {
+  font-size: 1.4rem;
+  font-family: "Stolzl-Light";
+  text-transform: uppercase;
+}
+.contact .contentContact ul {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.contact .contentContact-left {
+  max-width: 30rem;
+  width: 100%;
+  margin-left: 9%;
+}
+.contact .contentContact-left div:nth-child(2) {
+  margin-top: 4rem;
+}
+.contact .contentContact-left div:nth-child(3) {
+  align-self: flex-end;
+}
+@media screen and (max-width: 992px) {
+  .contact .contentContact-left {
+    margin-left: 0;
+  }
+}
+.contact .contentContact-right {
+  max-width: 34rem;
+  width: 100%;
+  margin-left: 9%;
+}
+.contact .contentContact-right address {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+}
+.contact .contentContact-right address a {
+  font-family: "Stolzl-Light";
+  font-size: 3.6rem;
+}
+.contact .contentContact-right :last-child {
+  align-self: flex-end;
+}
+@media screen and (max-width: 992px) {
+  .contact .contentContact-right {
+    margin-left: 0;
+    max-width: 30rem;
+  }
+}
+.contact .contentContact a:hover {
+  color: #c06f57;
+}
+.contact .informationsFooter a:hover {
+  color: #c06f57;
+}
+.contact .backgroundContact {
+  z-index: 1;
+  position: absolute;
+  bottom: -28rem;
+  right: -38rem;
+  width: 100%;
+  max-width: 96.5rem;
+  aspect-ratio: 1;
+  background-image: url(/src/images/Picto_Monkey_beige.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/*# sourceMappingURL=style.css.map */

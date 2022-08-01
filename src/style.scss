@@ -1,0 +1,455 @@
+//---------------------------------------------------------------------------------------------------
+//---------| For watch sass run |>      sass --watch src/style.scss:src/css/style.css     <|---------
+//---------------------------------------------------------------------------------------------------
+@use './Scss_library' as *;
+
+
+
+html{
+    color: $clr-light-beige;
+    font-family: $fnt-main;
+    
+    background-color: $clr-main;
+    scroll-behavior: smooth;
+}
+body {    
+    background-color: $clr-dark-blue;
+
+    display: flex;
+    flex-wrap:wrap;
+    gap: 1rem;
+    padding: 1rem;
+
+    @include mq(laptop){
+        background-color: rgb(0, 255, 76);
+    }
+    @include mq(tablet){
+        background-color: red;
+    }
+}
+
+.home{
+    width: 100%;
+    height: calc(100vh - 2rem);
+    
+    position: relative;
+    padding: 3rem 7rem;
+    border-radius: 4rem;
+  
+    display: flex;
+    flex-wrap:wrap;
+
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+
+    header {
+        z-index: $avant-plan;
+        height: 12rem;
+        width: 100%;
+
+        align-self: flex-start;
+
+        display: grid;
+        grid-template-columns: 33.33% 33.33% 33.33%;
+        justify-items: stretch;
+        align-items: center;
+
+        .logoSanzaruEvents{
+            width: 15rem;
+            height: 100%;
+        }
+        .pictoMonkey{
+            height: 12rem;
+            aspect-ratio: 1;
+        }
+        nav {
+            justify-self: end;
+
+            min-width: max-content;
+            height: 2rem;
+            ul{ 
+                li{
+                    display:inline;
+                    margin-left: 2rem;
+
+                    font-size: 1.6rem;
+                    font-family: $fnt-main;
+                    text-transform: uppercase;
+
+                    transition: color 300ms;
+                    &:first-child{
+                        margin: 0;
+                    }
+                    &:hover{
+                        color: $clr-cuivre;
+                    } 
+                    
+                    @include mq(laptop){
+                        display:block;
+                        margin: 1rem 0;
+                    }
+                }
+            }
+        }
+    }
+
+    h2{
+        z-index: $avant-plan;
+        width: clamp( 70rem, 100%, 100rem);
+    
+        text-align: center;
+        font-size: 8.4rem;
+        font-family: "Stolzl-Book";
+        line-height: 10.1rem;
+        letter-spacing: 1.65rem;
+        text-transform: uppercase;
+
+        @include mq('laptop'){
+            font-size: 6rem;
+            line-height: 8rem;
+            letter-spacing: 1.2rem;
+        }
+    }
+
+    .backgroundHome{
+        z-index: $arriere-plan ;
+        
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        background-image: url(/src/images/1.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        .layerColor {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+            background-color: rgba( $clr-light-blue, .5);
+
+            &::before{
+                content: "";
+                position: absolute;
+                top: -54rem;
+                left: -154rem;
+                width: 298rem;
+                height: 300rem;
+
+
+                background: radial-gradient(
+                                47.97% 47.97% at 52.03% 50%,
+                                $clr-dark-blue 0%, 
+                                rgba(35, 45, 64, 0) 59.9%);
+            }
+        }
+
+    }
+
+    @include mq(laptop){
+        
+    }
+}
+.about{
+    width: 100%;
+    height: 100%;
+    
+    padding: 6rem 7rem 3rem 7rem ;
+    border-radius: 4rem;
+
+    display: flex;
+    flex-wrap:wrap;
+
+    overflow: hidden;
+    background-color: $clr-light-beige;
+
+    color: $clr-light-blue;
+
+    h2{
+        max-width: 62.8rem;
+        width: 100%;
+        font-size: 8.4rem;
+        font-family: "Stolzl-Book";
+        line-height: 8.8rem;
+        margin-bottom: 6rem;
+    }
+    .containerAboutInfos{
+        width: 100%;
+        height: 100%;
+        margin-bottom: 6rem;
+
+        display: flex;
+        justify-content: space-between;
+
+        gap: 12rem;
+
+        .contentLeft{
+            max-width: 62.8rem;
+            width: 100%;
+            height: 100%;
+
+    
+            h3{
+                font-size: 2rem;
+                font-family: "Stolzl-Regular";
+                line-height: 3rem;
+                text-transform: uppercase;
+    
+                margin-bottom: 4rem;
+            }
+        
+            p{
+                font-size: 1.4rem;
+                font-family: "Stolzl-Light";
+                line-height: 2.24rem;
+        
+                column-count: 2;
+                column-gap: 4em;
+            }
+        }
+        .contentRight{
+            max-width: 50%;
+            width: 100%;
+            height: max-content;
+            margin-top: -10rem;
+            margin-right: -7rem;
+            
+            
+            display: flex;
+            flex-wrap: wrap;
+            // overflow: hidden;
+
+            
+            .headingContentRight{
+                width: 100%;
+                height: fit-content;
+
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-items: center;
+
+
+                h3{
+                    max-width: 100%;
+                    padding-bottom: 2rem;
+
+                    font-size: 2.4rem;
+                    font-family: "Stolzl-Light";
+                    letter-spacing: 0.12em;
+                    text-transform: uppercase;
+                }
+            }
+
+            .containerSlideShow{
+                height: 100%;
+                width: 100%;
+                margin-top: 2rem;
+
+                // overflow: hidden;
+
+                .slideShow{
+                    width: fit-content;
+                    height: 36.2rem;
+                    display: flex;
+                }
+            }
+        }
+
+        @include mq('laptop'){
+            flex-wrap:wrap;
+
+            .contentLeft{
+                margin-bottom: 8rem;
+                max-width: 100%;
+            }
+
+            .contentRight{
+                max-width: 100%;
+            }
+        }
+    }
+    
+}
+.services{
+    width: 100%;
+    height: 100%;
+    
+    padding: 7rem 7rem 3rem 7rem ;
+    border-radius: 4rem;
+
+    display: flex;
+    flex-wrap:wrap;
+
+
+    background-color: $clr-light-blue;
+
+    color: $clr-light-beige;
+
+    h2{
+        width: 100%;
+        font-size: 8.4rem;
+        font-family: "Stolzl-Book";
+        line-height: 8.8rem;
+    }
+    .servicesInfos{
+        $width-p: 65rem;
+        margin-left: calc(100% - $width-p);
+        max-width: $width-p;
+        width: 100%;
+
+        
+        font-size: 1.4rem;
+        font-family: "Stolzl-Light";
+        line-height: 2.24rem;
+
+        column-count: 2;
+        column-gap: 4em;
+        
+        
+        @include mq('laptop'){
+            margin-top: 4rem;  
+            margin-left: 0;
+            max-width: 100%;
+        }
+    }
+
+
+    .containerServices{
+        height: 40rem;
+        width: 100%;
+
+        margin: 8rem 0;
+        background-color: $clr-light-beige;
+    }
+
+}
+.contact{
+    width: 100%;
+    height: 100%;
+    
+    padding: 7rem 7rem 3rem 7rem ;
+    border-radius: 4rem;
+
+    position: relative;
+
+    display: flex;
+    flex-wrap:wrap;
+
+    background-color: $clr-dark-beige;
+    color: $clr-light-blue;
+
+    overflow: hidden;
+    
+    h2{
+        z-index: $avant-plan;
+        flex: 1 0 100%;  /* flex-grow, flex-shrink, flex-basis */
+        font-size: 8.4rem;
+        font-family: "Stolzl-Book";
+        line-height: 8.8rem;
+
+        margin-bottom: 8rem;
+    }
+    
+
+    .contentContact{
+        z-index: $avant-plan;
+        height: 28.9rem;
+        width: 100%;
+
+        margin-bottom: 8rem;
+        display: flex;
+        flex-wrap: wrap;
+        
+        h3{
+            margin-bottom: 1rem;
+            font-size: 2rem;
+            font-family: "Stolzl-Medium";
+        }
+        p,li{
+            font-size: 1.4rem;
+            font-family: "Stolzl-Light";
+            text-transform: uppercase;
+        }
+        ul{
+            display:flex;
+            gap: 2rem;
+            flex-wrap:wrap;
+        }
+
+        &-left{ 
+            max-width: 30rem;
+            width: 100%;
+            margin-left: 9%;
+
+            div:nth-child(2){
+                margin-top: 4rem;
+            }
+            div:nth-child(3){
+                align-self: flex-end;
+            }
+
+            @include mq('laptop'){
+                margin-left: 0;
+            }
+        }
+        &-right{
+            max-width: 34rem;
+            width: 100%;
+            margin-left: 9%;
+
+
+            address{
+                display: flex;
+                flex-wrap: wrap;
+                align-content: space-between;
+
+                a{
+                    font-family: "Stolzl-Light";
+                    font-size: 3.6rem;
+                }
+            } 
+            & :last-child {
+                align-self: flex-end;
+            }
+            @include mq('laptop'){
+                margin-left: 0;
+                max-width: 30rem;
+            }
+        }
+        a:hover{
+            color: $clr-cuivre;
+        }  
+    }
+    
+    .informationsFooter{
+        a:hover{
+            color: $clr-cuivre;
+        }  
+    }
+    .backgroundContact{
+        z-index: $arriere-plan;
+        
+        position: absolute;
+        bottom: -28rem;
+        right: -38rem;
+        width: 100%;
+        max-width: 96.5rem;
+        aspect-ratio: 1;
+
+        background-image: url(/src/images/Picto_Monkey_beige.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+}
+
+
