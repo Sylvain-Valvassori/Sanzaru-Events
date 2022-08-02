@@ -29,10 +29,16 @@
         .logoSanzaruEvents{
             width: 15rem;
             height: 100%;
+            @include mq('mobile'){
+                width: 12rem;
+            }
         }
         .pictoMonkey{
             height: 12rem;
             aspect-ratio: 1;
+            @include mq('mobile'){
+                height: 6rem;
+            }
         }
         nav {
             justify-self: end;
@@ -59,6 +65,14 @@
                     color: $clr-cuivre;
                 } 
             }
+
+            @include mq('mobile'){
+                display: none;
+            }
+        }
+
+        @include mq('mobile'){
+            grid-template-columns: 50% 50%;
         }
     }
 
@@ -77,6 +91,11 @@
             font-size: 6rem;
             line-height: 8rem;
             letter-spacing: 1.2rem;
+        }
+        @include mq('mobile'){
+            font-size: 4rem;
+            line-height: 6rem;
+            letter-spacing: 1rem;
         }
     }
 
@@ -119,5 +138,9 @@
             }
         }
 
+    }
+
+    @include mq('mobile'){
+        padding: 3rem 3rem;
     }
 }

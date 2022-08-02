@@ -8,7 +8,14 @@
     justify-items: center;
     align-items: flex-end;
     gap: 1rem;
-    
+    .losange{
+        width: 1.473rem;
+        height: 2rem;
+    }
+    h3{
+        font-size: 1.4rem;
+        text-transform: uppercase;
+    }
     &:hover { 
         .losange{
             fill: $clr-cuivre;
@@ -20,25 +27,27 @@
     &-beige{
         .losange{
             fill: $clr-light-beige;
-            width: 1.473rem;
-            height: 2rem;
         }
         h3{
-            font-size: 1.4rem;
-            text-transform: uppercase;
             color: $clr-light-beige;
         }
     }
     &-blue{
         .losange{
             fill: $clr-light-blue;
-            width: 1.473rem;
-            height: 2rem;
         }
         h3{
-            font-size: 1.4rem;
-            text-transform: uppercase;
             color: $clr-light-blue;
+        }
+    }
+
+    @include mq('mobile'){
+        .losange{
+            width: 1.2rem;
+            height: 1.4rem;
+        }
+        h3{
+            font-size: 1.2rem;
         }
     }
 }
@@ -71,6 +80,13 @@
             color: $clr-light-beige;
             background-color: $clr-dark-blue;
         }
+    }
+
+    @include mq('mobile'){
+        padding: 0.75rem 1.5rem;
+        border-radius: 4rem;
+    
+        font-size: 1.2rem;
     }
 }
 

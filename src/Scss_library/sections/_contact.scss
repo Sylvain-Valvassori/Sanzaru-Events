@@ -14,10 +14,11 @@
 
     .contentContact{
         z-index: $avant-plan;
-        height: 28.9rem;
+        height: auto;
         width: 100%;
-
         margin: 2rem 0;
+        margin-left: 9%;
+
         display: flex;
         flex-wrap: wrap;
         
@@ -37,50 +38,50 @@
             gap: 2rem;
         }
 
-        &-left{ 
-            max-width: 30rem;
-            width: 100%;
-            margin-left: 9%;
-
-            & > :nth-child(2){
-                margin-top: 4rem;
-            }
-          
-            & :last-child{
-                align-self: flex-end;
-            }
+        div, address{
+            height: fit-content;
+        }
+        .partUp{
+            max-height: 18.6rem;
+            margin-top: 4rem;
+            margin-bottom: 5rem;
+            
+            display: flex;
+            flex-wrap: wrap;
+            align-content: space-between;
 
             @include mq('mobile'){
-                
+                min-height: 15rem;
+
+                margin-top: 0;   
+                margin-bottom: 3rem;
             }
+        }
+        .partDown{
+            align-self: flex-end;
+            
+            @include mq('mobile'){
+                align-self:auto;
+            }
+        }
+
+        &-left{ 
+            max-width: 30rem;
         }
         &-right{
             max-width: 34rem;
-            width: 100%;
-            margin-left: 9%;
-
 
             address{
-                display: flex;
-                flex-wrap: wrap;
-                align-content: space-between;
-
                 a{
                     font-family: "Stolzl-Light";
                     font-size: 3.6rem;
 
                     @include mq('tablet'){
                         font-size: 2.8rem;
-                    }
+                    }  
                 }
             } 
-            & :last-child {
-                align-self: flex-end;
-            }
         }
-        a:hover{
-            color: $clr-cuivre;
-        }  
 
         @include mq('tablet'){
             margin-left: 0;
@@ -89,7 +90,7 @@
             margin: 0 0 2rem 0;
         }
         @include mq('mobile'){
-            
+            margin: 4rem 0;
         }
     }
     .backgroundContact{
@@ -106,10 +107,17 @@
         background-position: center;
         background-repeat: no-repeat;
         background-size: contain;
+
+        @include mq('mobile'){
+
+            bottom: -10rem;
+            right: -30rem;
+            min-width: 62rem;
+        }
     }
 
 
     @include mq('tablet'){
-        justify-content: space-evenly;
+        justify-content: space-around;
     }
 }

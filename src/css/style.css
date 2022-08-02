@@ -84,6 +84,14 @@ address {
   align-items: flex-end;
   gap: 1rem;
 }
+.btn-nav .losange {
+  width: 1.473rem;
+  height: 2rem;
+}
+.btn-nav h3 {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+}
 .btn-nav:hover .losange {
   fill: #c06f57;
 }
@@ -92,23 +100,24 @@ address {
 }
 .btn-nav-beige .losange {
   fill: #fdf4ee;
-  width: 1.473rem;
-  height: 2rem;
 }
 .btn-nav-beige h3 {
-  font-size: 1.4rem;
-  text-transform: uppercase;
   color: #fdf4ee;
 }
 .btn-nav-blue .losange {
   fill: #232d40;
-  width: 1.473rem;
-  height: 2rem;
 }
 .btn-nav-blue h3 {
-  font-size: 1.4rem;
-  text-transform: uppercase;
   color: #232d40;
+}
+@media screen and (max-width: 768px) {
+  .btn-nav .losange {
+    width: 1.2rem;
+    height: 1.4rem;
+  }
+  .btn-nav h3 {
+    font-size: 1.2rem;
+  }
 }
 
 .btn-contact {
@@ -134,6 +143,13 @@ address {
 .btn-contact-blue:hover {
   color: #fdf4ee;
   background-color: #151f36;
+}
+@media screen and (max-width: 768px) {
+  .btn-contact {
+    padding: 0.75rem 1.5rem;
+    border-radius: 4rem;
+    font-size: 1.2rem;
+  }
 }
 
 .separator {
@@ -286,9 +302,19 @@ address {
   width: 15rem;
   height: 100%;
 }
+@media screen and (max-width: 768px) {
+  .allSection.home header .logoSanzaruEvents {
+    width: 12rem;
+  }
+}
 .allSection.home header .pictoMonkey {
   height: 12rem;
   aspect-ratio: 1;
+}
+@media screen and (max-width: 768px) {
+  .allSection.home header .pictoMonkey {
+    height: 6rem;
+  }
 }
 .allSection.home header nav {
   justify-self: end;
@@ -310,6 +336,16 @@ address {
 .allSection.home header nav a:hover {
   color: #c06f57;
 }
+@media screen and (max-width: 768px) {
+  .allSection.home header nav {
+    display: none;
+  }
+}
+@media screen and (max-width: 768px) {
+  .allSection.home header {
+    grid-template-columns: 50% 50%;
+  }
+}
 .allSection.home h2 {
   z-index: 2;
   width: clamp(70rem, 100%, 100rem);
@@ -325,6 +361,13 @@ address {
     font-size: 6rem;
     line-height: 8rem;
     letter-spacing: 1.2rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .allSection.home h2 {
+    font-size: 4rem;
+    line-height: 6rem;
+    letter-spacing: 1rem;
   }
 }
 .allSection.home .backgroundHome {
@@ -355,6 +398,11 @@ address {
   width: 298rem;
   height: 300rem;
   background: radial-gradient(47.97% 47.97% at 52.03% 50%, #151f36 0%, rgba(35, 45, 64, 0) 59.9%);
+}
+@media screen and (max-width: 768px) {
+  .allSection.home {
+    padding: 3rem 3rem;
+  }
 }
 
 .about {
@@ -426,6 +474,7 @@ address {
   height: 100%;
   width: 100%;
   margin-top: 2rem;
+  overflow: auto;
 }
 .about .containerAboutInfos .contentRight .containerSlideShow .slideShow {
   width: fit-content;
@@ -489,9 +538,10 @@ address {
 }
 .contact .contentContact {
   z-index: 2;
-  height: 28.9rem;
+  height: auto;
   width: 100%;
   margin: 2rem 0;
+  margin-left: 9%;
   display: flex;
   flex-wrap: wrap;
 }
@@ -510,26 +560,37 @@ address {
   flex-wrap: wrap;
   gap: 2rem;
 }
-.contact .contentContact-left {
-  max-width: 30rem;
-  width: 100%;
-  margin-left: 9%;
+.contact .contentContact div, .contact .contentContact address {
+  height: fit-content;
 }
-.contact .contentContact-left > :nth-child(2) {
+.contact .contentContact .partUp {
+  max-height: 18.6rem;
   margin-top: 4rem;
-}
-.contact .contentContact-left :last-child {
-  align-self: flex-end;
-}
-.contact .contentContact-right {
-  max-width: 34rem;
-  width: 100%;
-  margin-left: 9%;
-}
-.contact .contentContact-right address {
+  margin-bottom: 5rem;
   display: flex;
   flex-wrap: wrap;
   align-content: space-between;
+}
+@media screen and (max-width: 768px) {
+  .contact .contentContact .partUp {
+    min-height: 15rem;
+    margin-top: 0;
+    margin-bottom: 3rem;
+  }
+}
+.contact .contentContact .partDown {
+  align-self: flex-end;
+}
+@media screen and (max-width: 768px) {
+  .contact .contentContact .partDown {
+    align-self: auto;
+  }
+}
+.contact .contentContact-left {
+  max-width: 30rem;
+}
+.contact .contentContact-right {
+  max-width: 34rem;
 }
 .contact .contentContact-right address a {
   font-family: "Stolzl-Light";
@@ -540,17 +601,16 @@ address {
     font-size: 2.8rem;
   }
 }
-.contact .contentContact-right :last-child {
-  align-self: flex-end;
-}
-.contact .contentContact a:hover {
-  color: #c06f57;
-}
 @media screen and (max-width: 960px) {
   .contact .contentContact {
     margin-left: 0;
     max-width: 24rem;
     margin: 0 0 2rem 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  .contact .contentContact {
+    margin: 4rem 0;
   }
 }
 .contact .backgroundContact {
@@ -566,9 +626,16 @@ address {
   background-repeat: no-repeat;
   background-size: contain;
 }
+@media screen and (max-width: 768px) {
+  .contact .backgroundContact {
+    bottom: -10rem;
+    right: -30rem;
+    min-width: 62rem;
+  }
+}
 @media screen and (max-width: 960px) {
   .contact {
-    justify-content: space-evenly;
+    justify-content: space-around;
   }
 }
 
@@ -586,20 +653,8 @@ body {
   gap: 1rem;
   padding: 1rem;
 }
-@media screen and (max-width: 1600px) {
-  body {
-    background-color: #00ff4c;
-  }
-}
-@media screen and (max-width: 960px) {
-  body {
-    background-color: red;
-  }
-}
-@media screen and (max-width: 768px) {
-  body {
-    background-color: #ffae00;
-  }
+body a:hover {
+  color: #c06f57;
 }
 body .allSection {
   width: 100%;
@@ -631,18 +686,25 @@ body .titleSection {
 }
 body .informationsFooter {
   width: 100%;
-  height: 4rem;
+  min-height: 4rem;
+  padding: 1rem 0;
   display: flex;
-  justify-content: space-evenly;
   align-items: center;
+  justify-content: space-evenly;
   gap: 2rem;
   font-size: 1rem;
+  text-align: center;
   color: #fdf4ee;
   text-transform: uppercase;
   font-family: "Stolzl-Regular";
 }
-body .informationsFooter a:hover {
-  color: #c06f57;
+@media screen and (max-width: 768px) {
+  body .informationsFooter {
+    flex-wrap: wrap;
+  }
+  body .informationsFooter a, body .informationsFooter p {
+    width: 100%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
