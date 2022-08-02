@@ -195,7 +195,7 @@ address {
   justify-content: space-between;
   align-items: center;
 }
-@media (max-width: 1600px) {
+@media (max-width: 960px) {
   .footerSection nav {
     flex-wrap: wrap;
   }
@@ -322,7 +322,7 @@ address {
   letter-spacing: 1.65rem;
   text-transform: uppercase;
 }
-@media (max-width: 1600px) {
+@media (max-width: 960px) {
   .home h2 {
     font-size: 6rem;
     line-height: 8rem;
@@ -551,7 +551,7 @@ address {
 .contact .contentContact-left div:nth-child(3) {
   align-self: flex-end;
 }
-@media (max-width: 1600px) {
+@media (max-width: 960px) {
   .contact .contentContact-left {
     margin-left: 0;
   }
@@ -573,7 +573,7 @@ address {
 .contact .contentContact-right :last-child {
   align-self: flex-end;
 }
-@media (max-width: 1600px) {
+@media (max-width: 960px) {
   .contact .contentContact-right {
     margin-left: 0;
     max-width: 30rem;

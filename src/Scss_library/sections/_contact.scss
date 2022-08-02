@@ -69,7 +69,7 @@
                 align-self: flex-end;
             }
 
-            @include mq('laptop'){
+            @include mq('tablet'){
                 margin-left: 0;
             }
         }
@@ -92,7 +92,7 @@
             & :last-child {
                 align-self: flex-end;
             }
-            @include mq('laptop'){
+            @include mq('tablet'){
                 margin-left: 0;
                 max-width: 30rem;
             }

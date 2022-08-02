@@ -157,7 +157,7 @@
         //     text-transform: uppercase;
         // }
 
-        @include mq('laptop'){
+        @include mq('tablet'){
             flex-wrap: wrap;
         }
     }

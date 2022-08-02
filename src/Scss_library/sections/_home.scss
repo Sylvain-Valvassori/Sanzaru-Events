@@ -78,7 +78,7 @@
         letter-spacing: 1.65rem;
         text-transform: uppercase;
 
-        @include mq('laptop'){
+        @include mq('tablet'){
             font-size: 6rem;
             line-height: 8rem;
             letter-spacing: 1.2rem;
