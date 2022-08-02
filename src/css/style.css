@@ -195,7 +195,7 @@ address {
   justify-content: space-between;
   align-items: center;
 }
-@media (max-width: 960px) {
+@media screen and (max-width: 960px) {
   .footerSection nav {
     flex-wrap: wrap;
   }
@@ -322,7 +322,7 @@ address {
   letter-spacing: 1.65rem;
   text-transform: uppercase;
 }
-@media (max-width: 960px) {
+@media screen and (max-width: 960px) {
   .home h2 {
     font-size: 6rem;
     line-height: 8rem;
@@ -439,7 +439,7 @@ address {
   height: 36.2rem;
   display: flex;
 }
-@media (max-width: 960px) {
+@media screen and (max-width: 960px) {
   .about .containerAboutInfos {
     flex-wrap: wrap;
   }
@@ -479,7 +479,7 @@ address {
   column-count: 2;
   column-gap: 4em;
 }
-@media (max-width: 960px) {
+@media screen and (max-width: 960px) {
   .services .servicesInfos {
     margin-top: 4rem;
     margin-left: 0;
@@ -551,7 +551,7 @@ address {
 .contact .contentContact-left div:nth-child(3) {
   align-self: flex-end;
 }
-@media (max-width: 960px) {
+@media screen and (max-width: 960px) {
   .contact .contentContact-left {
     margin-left: 0;
   }
@@ -573,7 +573,7 @@ address {
 .contact .contentContact-right :last-child {
   align-self: flex-end;
 }
-@media (max-width: 960px) {
+@media screen and (max-width: 960px) {
   .contact .contentContact-right {
     margin-left: 0;
     max-width: 30rem;
@@ -610,17 +610,17 @@ body {
   gap: 1rem;
   padding: 1rem;
 }
-@media (max-width: 1600px) {
+@media screen and (max-width: 1600px) {
   body {
     background-color: #00ff4c;
   }
 }
-@media (max-width: 960px) {
+@media screen and (max-width: 960px) {
   body {
     background-color: red;
   }
 }
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   body {
     background-color: #ffae00;
   }

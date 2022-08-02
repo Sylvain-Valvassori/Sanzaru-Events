@@ -16,6 +16,6 @@ $breakpoints: (
 
 // ---| la mixin |---
 @mixin mq ($breakpoint) {
-  @media (max-width: map-get($breakpoints, $breakpoint)) { @content; }        
+  @media screen and (max-width: map-get($breakpoints, $breakpoint)) { @content; }        
 }
   
