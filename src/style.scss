@@ -30,6 +30,36 @@ body {
         background-color: rgb(255, 174, 0);
     }
 
+    .allSection{
+        width: 100%;
+        height: 100%;
+        
+        display: flex;
+        flex-wrap:wrap;
+        
+        padding: 7rem 7rem 3rem 7rem ;
+        overflow: hidden;
+        border-radius: 4rem;
+
+        @include mq('mobile'){
+            padding: 3rem 3rem;
+        }
+    }
+    .titleSection {
+        z-index: $avant-plan;
+
+        width: 100%;
+        margin-bottom: 6rem;
+
+        font-size: 8.4rem;
+        font-family: "Stolzl-Book";
+        line-height: 8.8rem;
+
+        @include mq('mobile'){
+            font-size: 6.4rem;
+            line-height: 6rem;
+        }
+    }
     .informationsFooter{
         width: 100%;
         height: 4rem;
@@ -39,15 +69,13 @@ body {
 
         gap: 2rem;
 
-        a{
-            font-size: 1rem;
-            text-transform: uppercase;
-            font-family: "Stolzl-Regular";
-            color: rgba($clr-light-beige, 1);
+        font-size: 1rem;
+        color:$clr-light-beige;
+        text-transform: uppercase;
+        font-family: "Stolzl-Regular";
 
-            &:hover{
-                color: $clr-cuivre;
-            }  
+        a:hover{
+            color: $clr-cuivre;
         }
     }
 }

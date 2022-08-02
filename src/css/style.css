@@ -188,6 +188,7 @@ address {
   z-index: 2;
   width: 100%;
   height: 6.6rem;
+  margin-top: 6rem;
   align-self: flex-end;
 }
 .footerSection nav {
@@ -262,19 +263,16 @@ address {
   margin-top: 2rem;
 }
 
-.home {
-  width: 100%;
-  height: calc(100vh - 2rem);
-  position: relative;
+.allSection.home {
+  min-height: calc(100vh - 2rem);
   padding: 3rem 7rem;
-  border-radius: 4rem;
-  display: flex;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  position: relative;
+  top: 0;
+  left: 0;
 }
-.home header {
+.allSection.home header {
   z-index: 2;
   height: 12rem;
   width: 100%;
@@ -284,15 +282,15 @@ address {
   justify-items: stretch;
   align-items: center;
 }
-.home header .logoSanzaruEvents {
+.allSection.home header .logoSanzaruEvents {
   width: 15rem;
   height: 100%;
 }
-.home header .pictoMonkey {
+.allSection.home header .pictoMonkey {
   height: 12rem;
   aspect-ratio: 1;
 }
-.home header nav {
+.allSection.home header nav {
   justify-self: end;
   height: 2rem;
   display: flex;
@@ -300,19 +298,19 @@ address {
   justify-content: flex-end;
   gap: 2rem;
 }
-.home header nav a {
+.allSection.home header nav a {
   font-size: 1.6rem;
   font-family: "Stolzl-Regular", sans-serif;
   text-transform: uppercase;
   transition: color 300ms;
 }
-.home header nav a:first-child {
+.allSection.home header nav a:first-child {
   margin: 0;
 }
-.home header nav a:hover {
+.allSection.home header nav a:hover {
   color: #c06f57;
 }
-.home h2 {
+.allSection.home h2 {
   z-index: 2;
   width: clamp(70rem, 100%, 100rem);
   text-align: center;
@@ -323,13 +321,13 @@ address {
   text-transform: uppercase;
 }
 @media screen and (max-width: 960px) {
-  .home h2 {
+  .allSection.home h2 {
     font-size: 6rem;
     line-height: 8rem;
     letter-spacing: 1.2rem;
   }
 }
-.home .backgroundHome {
+.allSection.home .backgroundHome {
   z-index: 1;
   position: absolute;
   top: 0;
@@ -341,7 +339,7 @@ address {
   background-repeat: no-repeat;
   background-size: cover;
 }
-.home .backgroundHome .layerColor {
+.allSection.home .backgroundHome .layerColor {
   position: absolute;
   top: 0;
   left: 0;
@@ -349,7 +347,7 @@ address {
   height: 100%;
   background-color: rgba(35, 45, 64, 0.5);
 }
-.home .backgroundHome .layerColor::before {
+.allSection.home .backgroundHome .layerColor::before {
   content: "";
   position: absolute;
   top: -54rem;
@@ -358,29 +356,13 @@ address {
   height: 300rem;
   background: radial-gradient(47.97% 47.97% at 52.03% 50%, #151f36 0%, rgba(35, 45, 64, 0) 59.9%);
 }
-@media screen and (max-width: 768px) {
-  .home {
-    padding: 3rem 3rem;
-  }
-}
 
 .about {
-  width: 100%;
-  height: 100%;
-  padding: 6rem 7rem 3rem 7rem;
-  border-radius: 4rem;
-  display: flex;
-  flex-wrap: wrap;
-  overflow: hidden;
-  background-color: #fdf4ee;
   color: #232d40;
+  background-color: #fdf4ee;
 }
-.about h2 {
+.about .titleSection {
   max-width: 62.8rem;
-  width: 100%;
-  font-size: 8.4rem;
-  font-family: "Stolzl-Book";
-  line-height: 8.8rem;
   margin-bottom: 6rem;
 }
 .about .containerAboutInfos {
@@ -462,28 +444,10 @@ address {
     max-width: 100%;
   }
 }
-@media screen and (max-width: 768px) {
-  .about {
-    padding: 3rem 3rem;
-  }
-}
 
 .services {
-  width: 100%;
-  height: 100%;
-  padding: 7rem 7rem 3rem 7rem;
-  border-radius: 4rem;
-  display: flex;
-  flex-wrap: wrap;
-  overflow: hidden;
-  background-color: #232d40;
   color: #fdf4ee;
-}
-.services h2 {
-  width: 100%;
-  font-size: 8.4rem;
-  font-family: "Stolzl-Book";
-  line-height: 8.8rem;
+  background-color: #232d40;
 }
 .services .servicesInfos {
   margin-left: calc(100% - 65rem);
@@ -497,9 +461,13 @@ address {
 }
 @media screen and (max-width: 960px) {
   .services .servicesInfos {
-    margin-top: 4rem;
     margin-left: 0;
     max-width: 100%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .services .servicesInfos {
+    column-count: initial;
   }
 }
 .services .containerServices {
@@ -511,38 +479,19 @@ address {
   flex-direction: column;
   gap: 2rem;
 }
-@media screen and (max-width: 768px) {
-  .services {
-    padding: 3rem 3rem;
-  }
-}
 
 .contact {
-  width: 100%;
-  height: 100%;
-  padding: 7rem 7rem 3rem 7rem;
-  border-radius: 4rem;
   position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  background-color: #fde8db;
+  top: 0;
+  left: 0;
   color: #232d40;
-  overflow: hidden;
-}
-.contact h2 {
-  z-index: 2;
-  flex: 1 0 100%;
-  /* flex-grow, flex-shrink, flex-basis */
-  font-size: 8.4rem;
-  font-family: "Stolzl-Book";
-  line-height: 8.8rem;
-  margin-bottom: 8rem;
+  background-color: #fde8db;
 }
 .contact .contentContact {
   z-index: 2;
   height: 28.9rem;
   width: 100%;
-  margin-bottom: 8rem;
+  margin: 2rem 0;
   display: flex;
   flex-wrap: wrap;
 }
@@ -558,18 +507,18 @@ address {
 }
 .contact .contentContact ul {
   display: flex;
-  gap: 2rem;
   flex-wrap: wrap;
+  gap: 2rem;
 }
 .contact .contentContact-left {
   max-width: 30rem;
   width: 100%;
   margin-left: 9%;
 }
-.contact .contentContact-left div:nth-child(2) {
+.contact .contentContact-left > :nth-child(2) {
   margin-top: 4rem;
 }
-.contact .contentContact-left div:nth-child(3) {
+.contact .contentContact-left :last-child {
   align-self: flex-end;
 }
 .contact .contentContact-right {
@@ -601,6 +550,7 @@ address {
   .contact .contentContact {
     margin-left: 0;
     max-width: 24rem;
+    margin: 0 0 2rem 0;
   }
 }
 .contact .backgroundContact {
@@ -619,11 +569,6 @@ address {
 @media screen and (max-width: 960px) {
   .contact {
     justify-content: space-evenly;
-  }
-}
-@media screen and (max-width: 768px) {
-  .contact {
-    padding: 3rem 3rem;
   }
 }
 
@@ -656,6 +601,34 @@ body {
     background-color: #ffae00;
   }
 }
+body .allSection {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 7rem 7rem 3rem 7rem;
+  overflow: hidden;
+  border-radius: 4rem;
+}
+@media screen and (max-width: 768px) {
+  body .allSection {
+    padding: 3rem 3rem;
+  }
+}
+body .titleSection {
+  z-index: 2;
+  width: 100%;
+  margin-bottom: 6rem;
+  font-size: 8.4rem;
+  font-family: "Stolzl-Book";
+  line-height: 8.8rem;
+}
+@media screen and (max-width: 768px) {
+  body .titleSection {
+    font-size: 6.4rem;
+    line-height: 6rem;
+  }
+}
 body .informationsFooter {
   width: 100%;
   height: 4rem;
@@ -663,12 +636,10 @@ body .informationsFooter {
   justify-content: space-evenly;
   align-items: center;
   gap: 2rem;
-}
-body .informationsFooter a {
   font-size: 1rem;
+  color: #fdf4ee;
   text-transform: uppercase;
   font-family: "Stolzl-Regular";
-  color: #fdf4ee;
 }
 body .informationsFooter a:hover {
   color: #c06f57;

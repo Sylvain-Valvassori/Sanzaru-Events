@@ -3,27 +3,10 @@
 
 
 .services{
-    width: 100%;
-    height: 100%;
-    
-    padding: 7rem 7rem 3rem 7rem ;
-    border-radius: 4rem;
-
-    display: flex;
-    flex-wrap:wrap;
-
-    overflow: hidden;
-
+    color: $clr-light-beige;
     background-color: $clr-light-blue;
 
-    color: $clr-light-beige;
-
-    h2{
-        width: 100%;
-        font-size: 8.4rem;
-        font-family: "Stolzl-Book";
-        line-height: 8.8rem;
-    }
+    
     .servicesInfos{
         $width-p: 65rem;
         margin-left: calc(100% - $width-p);
@@ -39,9 +22,11 @@
         column-gap: 4em;
         
         @include mq('tablet'){
-            margin-top: 4rem;  
             margin-left: 0;
             max-width: 100%;
+        }
+        @include mq('mobile'){
+            column-count: initial;
         }
     }
     .containerServices{
@@ -54,9 +39,5 @@
         display: flex;
         flex-direction: column;
         gap: 2rem;
-    }
-
-    @include mq('mobile'){
-        padding: 3rem 3rem;
     }
 }

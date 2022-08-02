@@ -3,20 +3,15 @@
 
 
 
-.home{
-    width: 100%;
-    height: calc(100vh - 2rem);
-    
-    position: relative;
+.allSection.home{
+    min-height: calc(100vh - 2rem);
     padding: 3rem 7rem;
-    border-radius: 4rem;
-  
-    display: flex;
-    flex-wrap:wrap;
-
+    
     align-items: center;
     justify-content: center;
-    overflow: hidden;
+    position: relative;
+    top: 0;
+    left: 0;
 
 
     header {
@@ -124,9 +119,5 @@
             }
         }
 
-    }
-
-    @include mq('mobile'){
-        padding: 3rem 3rem;
     }
 }
