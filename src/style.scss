@@ -19,7 +19,7 @@ body {
     flex-wrap:wrap;
     gap: 1rem;
     padding: 1rem;
-
+    
     @include mq(laptop){
         background-color: rgb(0, 255, 76);
     }
@@ -28,5 +28,26 @@ body {
     }
     @include mq(mobile){
         background-color: rgb(255, 174, 0);
+    }
+
+    .informationsFooter{
+        width: 100%;
+        height: 4rem;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+        
+
+        a{
+            font-size: 1rem;
+            text-transform: uppercase;
+            font-family: "Stolzl-Regular";
+            color: rgba($clr-light-beige, 1);
+
+            &:hover{
+                color: $clr-cuivre;
+            }  
+        }
     }
 }

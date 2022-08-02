@@ -42,30 +42,27 @@
         nav {
             justify-self: end;
 
-            min-width: max-content;
+            // width: 100%;
+            // max-width: fit-content;
             height: 2rem;
-            ul{ 
-                li{
-                    display:inline;
-                    margin-left: 2rem;
+            
+            display:flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            gap: 2rem;
 
-                    font-size: 1.6rem;
-                    font-family: $fnt-main;
-                    text-transform: uppercase;
+            a{
+                font-size: 1.6rem;
+                font-family: $fnt-main;
+                text-transform: uppercase;
 
-                    transition: color 300ms;
-                    &:first-child{
-                        margin: 0;
-                    }
-                    &:hover{
-                        color: $clr-cuivre;
-                    } 
-                    
-                    @include mq(laptop){
-                        display:block;
-                        margin: 1rem 0;
-                    }
+                transition: color 300ms;
+                &:first-child{
+                    margin: 0;
                 }
+                &:hover{
+                    color: $clr-cuivre;
+                } 
             }
         }
     }

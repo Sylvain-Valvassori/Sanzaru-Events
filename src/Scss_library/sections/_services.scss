@@ -37,7 +37,6 @@
         column-count: 2;
         column-gap: 4em;
         
-        
         @include mq('laptop'){
             margin-top: 4rem;  
             margin-left: 0;
@@ -50,8 +49,12 @@
         height: 40rem;
         width: 100%;
 
-        margin: 8rem 0;
+        margin: 11.2rem 0 6rem;
         background-color: $clr-light-beige;
+
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
     }
 
 }
