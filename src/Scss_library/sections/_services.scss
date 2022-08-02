@@ -12,6 +12,7 @@
     display: flex;
     flex-wrap:wrap;
 
+    overflow: hidden;
 
     background-color: $clr-light-blue;
 
@@ -37,7 +38,7 @@
         column-count: 2;
         column-gap: 4em;
         
-        @include mq('laptop'){
+        @include mq('tablet'){
             margin-top: 4rem;  
             margin-left: 0;
             max-width: 100%;

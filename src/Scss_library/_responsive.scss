@@ -6,14 +6,16 @@
 
 // ---| tableau de breakpoint |---
 $breakpoints: (
-  mobile:     1px * 576, 
-  tablet:     1px * 767, 
-  laptop:     1px * 992,
-  big-screen: 1px * 1400,
+  mobile              :     1px * 768, 
+  mobile-landscape    :     1px * 576, 
+  tablet              :     1px * 960, 
+  tablet-landscape    :     1px * 960, 
+  laptop              :     1px * 1600,
+  big-screen          :     1px * 1800,
 );
 
 // ---| la mixin |---
 @mixin mq ($breakpoint) {
-  @media screen and (max-width: map-get($breakpoints, $breakpoint)) { @content; }        
+  @media (max-width: map-get($breakpoints, $breakpoint)) { @content; }        
 }
   
