@@ -402,7 +402,12 @@ address {
   font-family: "Stolzl-Light";
   line-height: 2.24rem;
   column-count: 2;
-  column-gap: 4em;
+  column-gap: 4rem;
+}
+@media screen and (max-width: 768px) {
+  .about .containerAboutInfos .contentLeft p {
+    column-count: initial;
+  }
 }
 .about .containerAboutInfos .contentRight {
   max-width: 50%;
@@ -551,11 +556,6 @@ address {
 .contact .contentContact-left div:nth-child(3) {
   align-self: flex-end;
 }
-@media screen and (max-width: 960px) {
-  .contact .contentContact-left {
-    margin-left: 0;
-  }
-}
 .contact .contentContact-right {
   max-width: 34rem;
   width: 100%;
@@ -570,17 +570,22 @@ address {
   font-family: "Stolzl-Light";
   font-size: 3.6rem;
 }
+@media screen and (max-width: 960px) {
+  .contact .contentContact-right address a {
+    font-size: 2.8rem;
+  }
+}
 .contact .contentContact-right :last-child {
   align-self: flex-end;
 }
-@media screen and (max-width: 960px) {
-  .contact .contentContact-right {
-    margin-left: 0;
-    max-width: 30rem;
-  }
-}
 .contact .contentContact a:hover {
   color: #c06f57;
+}
+@media screen and (max-width: 960px) {
+  .contact .contentContact {
+    margin-left: 0;
+    max-width: 24rem;
+  }
 }
 .contact .backgroundContact {
   z-index: 1;
@@ -594,6 +599,11 @@ address {
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
+}
+@media screen and (max-width: 960px) {
+  .contact {
+    justify-content: space-evenly;
+  }
 }
 
 html {

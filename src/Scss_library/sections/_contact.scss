@@ -30,8 +30,6 @@
 
         margin-bottom: 8rem;
     }
-    
-
     .contentContact{
         z-index: $avant-plan;
         height: 28.9rem;
@@ -68,10 +66,6 @@
             div:nth-child(3){
                 align-self: flex-end;
             }
-
-            @include mq('tablet'){
-                margin-left: 0;
-            }
         }
         &-right{
             max-width: 34rem;
@@ -87,22 +81,25 @@
                 a{
                     font-family: "Stolzl-Light";
                     font-size: 3.6rem;
+
+                    @include mq('tablet'){
+                        font-size: 2.8rem;
+                    }
                 }
             } 
             & :last-child {
                 align-self: flex-end;
             }
-            @include mq('tablet'){
-                margin-left: 0;
-                max-width: 30rem;
-            }
         }
         a:hover{
             color: $clr-cuivre;
         }  
+
+        @include mq('tablet'){
+            margin-left: 0;
+            max-width: 24rem;
+        }
     }
-    
-    
     .backgroundContact{
         z-index: $arriere-plan;
         
@@ -117,5 +114,10 @@
         background-position: center;
         background-repeat: no-repeat;
         background-size: contain;
+    }
+
+
+    @include mq('tablet'){
+        justify-content: space-evenly;
     }
 }
