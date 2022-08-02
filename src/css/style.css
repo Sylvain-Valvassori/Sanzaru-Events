@@ -265,31 +265,6 @@ address {
   margin-top: 2rem;
 }
 
-html {
-  color: #fdf4ee;
-  font-family: "Stolzl-Regular", sans-serif;
-  background-color: #c1d9d9;
-  scroll-behavior: smooth;
-}
-
-body {
-  background-color: #151f36;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  padding: 1rem;
-}
-@media screen and (max-width: 992px) {
-  body {
-    background-color: #00ff4c;
-  }
-}
-@media screen and (max-width: 767px) {
-  body {
-    background-color: red;
-  }
-}
-
 .home {
   width: 100%;
   height: calc(100vh - 2rem);
@@ -626,6 +601,36 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+html {
+  color: #fdf4ee;
+  font-family: "Stolzl-Regular", sans-serif;
+  background-color: #c1d9d9;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #151f36;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+}
+@media screen and (max-width: 992px) {
+  body {
+    background-color: #00ff4c;
+  }
+}
+@media screen and (max-width: 767px) {
+  body {
+    background-color: red;
+  }
+}
+@media screen and (max-width: 576px) {
+  body {
+    background-color: #ffae00;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

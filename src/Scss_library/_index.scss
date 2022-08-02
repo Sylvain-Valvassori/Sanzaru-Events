@@ -3,3 +3,13 @@
 @forward './variables';
 @forward './component';
 @forward './responsive';
+
+
+// ----| sections |----
+@forward './sections/home';
+@forward './sections/about';
+@forward './sections/services';
+@forward './sections/contact';
+
+
+
