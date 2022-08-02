@@ -128,4 +128,7 @@
         }
     }
     
+    @include mq('mobile'){
+        padding: 3rem 3rem;
+    }
 }

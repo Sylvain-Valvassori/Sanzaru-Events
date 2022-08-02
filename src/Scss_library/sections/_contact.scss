@@ -120,4 +120,7 @@
     @include mq('tablet'){
         justify-content: space-evenly;
     }
+    @include mq('mobile'){
+        padding: 3rem 3rem;
+    }
 }

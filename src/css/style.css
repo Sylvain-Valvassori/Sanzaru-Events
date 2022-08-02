@@ -358,6 +358,12 @@ address {
   height: 300rem;
   background: radial-gradient(47.97% 47.97% at 52.03% 50%, #151f36 0%, rgba(35, 45, 64, 0) 59.9%);
 }
+@media screen and (max-width: 768px) {
+  .home {
+    padding: 3rem 3rem;
+  }
+}
+
 .about {
   width: 100%;
   height: 100%;
@@ -456,6 +462,11 @@ address {
     max-width: 100%;
   }
 }
+@media screen and (max-width: 768px) {
+  .about {
+    padding: 3rem 3rem;
+  }
+}
 
 .services {
   width: 100%;
@@ -499,6 +510,11 @@ address {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+}
+@media screen and (max-width: 768px) {
+  .services {
+    padding: 3rem 3rem;
+  }
 }
 
 .contact {
@@ -603,6 +619,11 @@ address {
 @media screen and (max-width: 960px) {
   .contact {
     justify-content: space-evenly;
+  }
+}
+@media screen and (max-width: 768px) {
+  .contact {
+    padding: 3rem 3rem;
   }
 }
 
