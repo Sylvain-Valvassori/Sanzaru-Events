@@ -546,6 +546,7 @@ address {
   margin-left: 9%;
   display: flex;
   flex-wrap: wrap;
+  align-content: flex-start;
 }
 .contact .contentContact h3 {
   margin-bottom: 1rem;
@@ -568,7 +569,7 @@ address {
 .contact .contentContact .partUp {
   height: 18.6rem;
   margin-top: 4rem;
-  margin-bottom: 5rem;
+  margin-bottom: 6rem;
   display: flex;
   flex-wrap: wrap;
   align-content: space-between;
@@ -578,14 +579,6 @@ address {
     max-height: 15rem;
     margin-top: 0;
     margin-bottom: 3rem;
-  }
-}
-.contact .contentContact .partDown {
-  align-self: flex-end;
-}
-@media screen and (max-width: 768px) {
-  .contact .contentContact .partDown {
-    align-self: auto;
   }
 }
 .contact .contentContact-left {
@@ -710,7 +703,6 @@ body .informationsFooter {
   justify-content: space-evenly;
   gap: 2rem;
   font-size: 1rem;
-  text-align: center;
   color: #fdf4ee;
   text-transform: uppercase;
   font-family: "Stolzl-Regular";
@@ -718,9 +710,7 @@ body .informationsFooter {
 @media screen and (max-width: 768px) {
   body .informationsFooter {
     flex-wrap: wrap;
-  }
-  body .informationsFooter a, body .informationsFooter p {
-    width: 100%;
+    justify-content: space-around;
   }
 }
 

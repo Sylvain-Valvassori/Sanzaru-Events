@@ -21,6 +21,7 @@
 
         display: flex;
         flex-wrap: wrap;
+        align-content: flex-start;
         
         h3{
             margin-bottom: 1rem;
@@ -44,7 +45,7 @@
         .partUp{
             height: 18.6rem;
             margin-top: 4rem;
-            margin-bottom: 5rem;
+            margin-bottom: 6rem;
             
             display: flex;
             flex-wrap: wrap;
@@ -58,10 +59,10 @@
             }
         }
         .partDown{
-            align-self: flex-end;
+            // align-self: flex-end;
             
             @include mq('mobile'){
-                align-self:auto;
+                // align-self:auto;
             }
         }
 

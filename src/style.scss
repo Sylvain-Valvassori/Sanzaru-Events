@@ -74,16 +74,13 @@ body {
         gap: 2rem;
 
         font-size: 1rem;
-        text-align: center;
         color:$clr-light-beige;
         text-transform: uppercase;
         font-family: "Stolzl-Regular";
 
         @include mq('mobile'){
             flex-wrap: wrap;
-            a,p{
-                width: 100%;
-            }
+            justify-content: space-around;
         }
     }
 }
