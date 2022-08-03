@@ -15,7 +15,7 @@
 
 
     header {
-        z-index: $avant-plan;
+        z-index: $second-plan;
         height: 12rem;
         width: 100%;
 
@@ -81,7 +81,7 @@
     }
 
     h2{
-        z-index: $avant-plan;
+        z-index: $second-plan;
         width: clamp( 70rem, 100%, 100rem);
     
         text-align: center;
@@ -104,7 +104,7 @@
     }
 
     .backgroundHome{
-        z-index: $arriere-plan ;
+        z-index: $last-plan;
         
         position: absolute;
         top: 0;

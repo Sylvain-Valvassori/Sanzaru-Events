@@ -279,6 +279,180 @@ address {
   margin-top: 2rem;
 }
 
+.cardService {
+  cursor: pointer;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8rem;
+  padding: 2rem 4rem;
+  transition: all 300ms ease-in-out;
+  overflow: hidden;
+}
+.cardService .heading {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cardService .heading .serviceName {
+  z-index: 3;
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-family: "Stolzl-Medium";
+}
+@media screen and (max-width: 768px) {
+  .cardService .heading .serviceName {
+    font-size: 2rem;
+  }
+}
+.cardService .heading .cross {
+  z-index: 3;
+  width: 4rem;
+  height: 0.2rem;
+  position: relative;
+  top: 0;
+  left: 0;
+  background-color: #fdf4ee;
+  transition: rotate 300ms;
+  transition: all 300ms ease-in-out;
+}
+.cardService .heading .cross::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0.2rem;
+  height: 4rem;
+  transform: translate(-50%, -50%);
+  background-color: #fdf4ee;
+}
+@media screen and (max-width: 768px) {
+  .cardService .heading .cross {
+    width: 2rem;
+  }
+  .cardService .heading .cross::after {
+    height: 2rem;
+  }
+}
+.cardService .heading::after {
+  z-index: 2;
+  content: "";
+  position: absolute;
+  top: -90rem;
+  left: -90rem;
+  width: 180rem;
+  height: 181.4rem;
+  background: radial-gradient(47.97% 47.97% at 52.03% 50%, #151f36 0%, rgba(35, 45, 64, 0) 59.9%);
+}
+.cardService .content {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  gap: 8%;
+}
+.cardService .content .servicePicture {
+  width: 48.4%;
+  height: auto;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(../images/3.jpg);
+}
+@media screen and (max-width: 768px) {
+  .cardService .content .servicePicture {
+    width: 100%;
+    height: 50%;
+  }
+}
+.cardService .content .serviceDescription {
+  position: relative;
+  top: 30rem;
+  left: 0;
+  width: 32rem;
+  height: auto;
+  margin-top: 2rem;
+  margin-right: 8rem;
+  font-size: 1.5em;
+  line-height: 2.25rem;
+  font-family: "Stolzl-Light";
+  transition: all 600ms ease-in-out;
+}
+@media screen and (max-width: 768px) {
+  .cardService .content {
+    flex-wrap: wrap;
+  }
+}
+.cardService .serviceBackground {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(../images/3.jpg);
+  transition: all 300ms ease-in-out;
+}
+.cardService .serviceBackground::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(35, 45, 64, 0.5);
+  transition: all 300ms ease-in-out;
+}
+.cardService:hover .serviceBackground::before {
+  background-color: rgba(35, 45, 64, 0.2);
+  transition: all 300ms ease-in-out;
+}
+.cardService-active {
+  transition: all 300ms ease-in-out;
+  height: 30rem;
+  border-bottom: 0.1rem solid #fdf4ee;
+}
+.cardService-active .serviceBackground {
+  opacity: 0;
+  transition: all 300ms ease-in-out;
+}
+.cardService-active .cross {
+  transform: rotate(45deg);
+  transition: all 300ms ease-in-out;
+}
+.cardService-active .content .serviceDescription {
+  top: 0;
+  transition: all 600ms ease-in-out;
+}
+@media screen and (max-width: 768px) {
+  .cardService-active .content .serviceDescription {
+    width: 100%;
+    margin: 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  .cardService-active {
+    height: 70rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .cardService {
+    height: 6rem;
+  }
+}
+
 .allSection.home {
   min-height: 90rem;
   padding: 3rem 7rem;
@@ -522,10 +696,9 @@ address {
   }
 }
 .services .containerServices {
-  height: 40rem;
+  height: auto;
   width: 100%;
   margin: 11.2rem 0 6rem;
-  background-color: #fdf4ee;
   display: flex;
   flex-direction: column;
   gap: 2rem;

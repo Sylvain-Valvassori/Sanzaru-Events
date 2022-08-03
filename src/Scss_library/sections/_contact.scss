@@ -13,7 +13,7 @@
     background-color: $clr-dark-beige;
 
     .contentContact{
-        z-index: $avant-plan;
+        z-index: $second-plan;
         height: auto;
         width: 100%;
         margin: 2rem 0;
@@ -95,7 +95,7 @@
         }
     }
     .backgroundContact{
-        z-index: $arriere-plan;
+        z-index: $last-plan;
         
         position: absolute;
         bottom: -28rem;
