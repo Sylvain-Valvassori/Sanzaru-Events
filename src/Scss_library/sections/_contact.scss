@@ -42,7 +42,7 @@
             height: fit-content;
         }
         .partUp{
-            max-height: 18.6rem;
+            height: 18.6rem;
             margin-top: 4rem;
             margin-bottom: 5rem;
             
@@ -51,7 +51,7 @@
             align-content: space-between;
 
             @include mq('mobile'){
-                min-height: 15rem;
+                max-height: 15rem;
 
                 margin-top: 0;   
                 margin-bottom: 3rem;

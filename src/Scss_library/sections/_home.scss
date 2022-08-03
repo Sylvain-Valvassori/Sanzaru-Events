@@ -4,7 +4,7 @@
 
 
 .allSection.home{
-    min-height: calc(100vh - 2rem);
+    min-height: 90rem;
     padding: 3rem 7rem;
     
     align-items: center;
@@ -23,10 +23,12 @@
 
         display: grid;
         grid-template-columns: 33.33% 33.33% 33.33%;
-        justify-items: stretch;
+        justify-items: center;
         align-items: center;
 
         .logoSanzaruEvents{
+            justify-self: start;
+
             width: 15rem;
             height: 100%;
             @include mq('mobile'){
@@ -34,10 +36,12 @@
             }
         }
         .pictoMonkey{
-            height: 12rem;
+            width: 12rem;
             aspect-ratio: 1;
             @include mq('mobile'){
-                height: 6rem;
+                width: 6rem;
+                justify-self: end;
+
             }
         }
         nav {

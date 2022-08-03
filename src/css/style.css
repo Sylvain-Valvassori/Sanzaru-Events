@@ -280,7 +280,7 @@ address {
 }
 
 .allSection.home {
-  min-height: calc(100vh - 2rem);
+  min-height: 90rem;
   padding: 3rem 7rem;
   align-items: center;
   justify-content: center;
@@ -295,10 +295,11 @@ address {
   align-self: flex-start;
   display: grid;
   grid-template-columns: 33.33% 33.33% 33.33%;
-  justify-items: stretch;
+  justify-items: center;
   align-items: center;
 }
 .allSection.home header .logoSanzaruEvents {
+  justify-self: start;
   width: 15rem;
   height: 100%;
 }
@@ -308,12 +309,13 @@ address {
   }
 }
 .allSection.home header .pictoMonkey {
-  height: 12rem;
+  width: 12rem;
   aspect-ratio: 1;
 }
 @media screen and (max-width: 768px) {
   .allSection.home header .pictoMonkey {
-    height: 6rem;
+    width: 6rem;
+    justify-self: end;
   }
 }
 .allSection.home header nav {
@@ -564,7 +566,7 @@ address {
   height: fit-content;
 }
 .contact .contentContact .partUp {
-  max-height: 18.6rem;
+  height: 18.6rem;
   margin-top: 4rem;
   margin-bottom: 5rem;
   display: flex;
@@ -573,7 +575,7 @@ address {
 }
 @media screen and (max-width: 768px) {
   .contact .contentContact .partUp {
-    min-height: 15rem;
+    max-height: 15rem;
     margin-top: 0;
     margin-bottom: 3rem;
   }
@@ -655,6 +657,21 @@ body {
 }
 body a:hover {
   color: #c06f57;
+}
+@media screen and (max-width: 1600px) {
+  body {
+    background-color: #00ff4c;
+  }
+}
+@media screen and (max-width: 960px) {
+  body {
+    background-color: red;
+  }
+}
+@media screen and (max-width: 768px) {
+  body {
+    background-color: #ffae00;
+  }
 }
 body .allSection {
   width: 100%;
