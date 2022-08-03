@@ -265,7 +265,7 @@
     height: 8rem;
     padding: 2rem 4rem;
     transition: height 300ms ease-in-out;
-
+    
     overflow: hidden;
 
     .heading{
@@ -371,7 +371,6 @@
             }
         }
         .serviceDescription{
-    
             width: 32rem;
             height: auto;
             margin-top: 2rem;
@@ -457,7 +456,9 @@
                 }
             }
         }
-
+        .serviceDescription{
+            z-index: 4;
+        }
         .serviceBackground{
             opacity: 0;
             transition: opacity 300ms ease-in-out;
