@@ -287,7 +287,7 @@ address {
   width: 100%;
   height: 8rem;
   padding: 2rem 4rem;
-  transition: all 300ms ease-in-out;
+  transition: height 300ms ease-in-out;
   overflow: hidden;
 }
 .cardService .heading {
@@ -319,8 +319,7 @@ address {
   top: 0;
   left: 0;
   background-color: #fdf4ee;
-  transition: rotate 300ms;
-  transition: all 300ms ease-in-out;
+  transition: transform 300ms ease-in-out;
 }
 .cardService .heading .cross::after {
   content: "";
@@ -350,6 +349,11 @@ address {
   height: 181.4rem;
   background: radial-gradient(47.97% 47.97% at 52.03% 50%, #151f36 0%, rgba(35, 45, 64, 0) 59.9%);
 }
+@media screen and (max-width: 768px) {
+  .cardService .heading {
+    height: 2rem;
+  }
+}
 .cardService .content {
   z-index: 1;
   position: absolute;
@@ -371,13 +375,10 @@ address {
 @media screen and (max-width: 768px) {
   .cardService .content .servicePicture {
     width: 100%;
-    height: 50%;
+    height: 48.4%;
   }
 }
 .cardService .content .serviceDescription {
-  position: relative;
-  top: 30rem;
-  left: 0;
   width: 32rem;
   height: auto;
   margin-top: 2rem;
@@ -385,11 +386,17 @@ address {
   font-size: 1.5em;
   line-height: 2.25rem;
   font-family: "Stolzl-Light";
-  transition: all 600ms ease-in-out;
+}
+@media screen and (max-width: 768px) {
+  .cardService .content .serviceDescription {
+    width: 100%;
+    margin-right: 0;
+  }
 }
 @media screen and (max-width: 768px) {
   .cardService .content {
     flex-wrap: wrap;
+    gap: 0;
   }
 }
 .cardService .serviceBackground {
@@ -403,7 +410,8 @@ address {
   background-position: center;
   background-repeat: no-repeat;
   background-image: url(../images/3.jpg);
-  transition: all 300ms ease-in-out;
+  opacity: 1;
+  transition: opacity 300ms ease-in-out;
 }
 .cardService .serviceBackground::before {
   content: "";
@@ -413,51 +421,42 @@ address {
   width: 100%;
   height: 100%;
   background-color: rgba(35, 45, 64, 0.5);
-  transition: all 300ms ease-in-out;
+  transition: background-color 300ms ease-in-out;
 }
 .cardService:hover .serviceBackground::before {
   background-color: rgba(35, 45, 64, 0.2);
-  transition: all 300ms ease-in-out;
+  transition: background-color 300ms ease-in-out;
 }
 @media screen and (max-width: 768px) {
   .cardService {
     height: 6rem;
+    padding: 2rem 2rem;
   }
 }
-.cardService-active {
-  transition: all 300ms ease-in-out;
+.cardService.active {
+  transition: height 300ms ease-in-out;
   height: 30rem;
   border-bottom: 0.1rem solid #fdf4ee;
 }
-.cardService-active .serviceBackground {
-  opacity: 0;
-  transition: all 300ms ease-in-out;
-}
-.cardService-active .heading .cross {
-  transform: rotate(45deg);
-  transition: all 300ms ease-in-out;
+.cardService.active .heading .cross {
+  transform: rotate(-45deg);
+  transition: transform 300ms ease-in-out;
 }
 @media screen and (max-width: 768px) {
-  .cardService-active .heading::after {
+  .cardService.active .heading::after {
     top: -99rem;
     left: -96rem;
     width: 170rem;
     height: 173.4rem;
   }
 }
-.cardService-active .content .serviceDescription {
-  top: 0;
-  transition: all 600ms ease-in-out;
+.cardService.active .serviceBackground {
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
 }
 @media screen and (max-width: 768px) {
-  .cardService-active .content .serviceDescription {
-    width: 100%;
-    margin: 0;
-  }
-}
-@media screen and (max-width: 768px) {
-  .cardService-active {
-    height: 70rem;
+  .cardService.active {
+    height: 60rem;
   }
 }
 
@@ -831,21 +830,6 @@ body {
 }
 body a:hover {
   color: #c06f57;
-}
-@media screen and (max-width: 1600px) {
-  body {
-    background-color: #00ff4c;
-  }
-}
-@media screen and (max-width: 960px) {
-  body {
-    background-color: red;
-  }
-}
-@media screen and (max-width: 768px) {
-  body {
-    background-color: #ffae00;
-  }
 }
 body .allSection {
   width: 100%;

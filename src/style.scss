@@ -23,15 +23,15 @@ body {
     a:hover{
         color: $clr-cuivre;
     }
-    @include mq(laptop){
-        background-color: rgb(0, 255, 76);
-    }
-    @include mq(tablet){
-        background-color: red;
-    }
-    @include mq(mobile){
-        background-color: rgb(255, 174, 0);
-    }
+    // @include mq(laptop){
+    //     background-color: rgb(0, 255, 76);
+    // }
+    // @include mq(tablet){
+    //     background-color: red;
+    // }
+    // @include mq(mobile){
+    //     background-color: rgb(255, 174, 0);
+    // }
 
     .allSection{
         width: 100%;
