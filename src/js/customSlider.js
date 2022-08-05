@@ -1,14 +1,16 @@
 //! Slider informations
 const slider                = document.querySelector('.slider');
 const slider_width          = slider.offsetWidth;
+let valueRightPositionSlider = getCoords(slider).right;
 
 //! Wrapper-slide informations
-const wrapperSlide                  = document.querySelector('.wrapper');
-const wrapperSlide_width            = wrapperSlide.offsetWidth;
-const wrapperSlide_height           = wrapperSlide.offsetHeight;
+const wrapper                  = document.querySelector('.wrapper');
+const wrapper_width            = wrapper.offsetWidth;
+const wrapper_height           = wrapper.offsetHeight;
+let valueRightPositionwrapper = getCoords(wrapper).right;
 
 //? get the value of flex gap
-const gapSlideValue  =  parseInt( window.getComputedStyle(wrapperSlide,null).getPropertyValue("gap") );
+const gapSlideValue  =  parseInt( window.getComputedStyle(wrapper,null).getPropertyValue("gap") );
 
 
 //! Slide informations
@@ -25,66 +27,72 @@ const btnPrev = document.getElementById('btn-prev');
 
 //! Générals informations
 let currentSlide = 0;
-let test = 0;
-let maxSlide = allSlides.length - 1;
+let maxSlide = allSlides.length;
 
 let widthSlideAndGapValue = slide_width + gapSlideValue;
-let difSizeBetween_WrapperSlide_Slider =   (wrapperSlide_width - slider_width);
+let difSizeBetween_wrapper_Slider =   (wrapper_width - slider_width);
 
-// Calcules
 
-// console.log('wrapperSlide_initPos_right       :',  getCoords(wrapperSlide).right  );
-// console.log('slider_initPos_right             :', getCoords(slider).right        );
-console.log('slider_initPos_left              :', getCoords(slider).left        );
-console.log('wrapperSlide_initPos_left        :',  getCoords(wrapperSlide).left  );
-console.log('wrapperSlide_width         :', wrapperSlide_width          );
-console.log('slider_width               :', slider_width                );
-console.log('slide_width                :', slide_width                 );
-console.log('widthSlideAndGapValue      :', widthSlideAndGapValue       );
-console.log('difSizeBetween_WrapperSlide_Slider                :', difSizeBetween_WrapperSlide_Slider       );
+
+
+
+
+// Formule
+
+// console.log('wrapper_initPos_right            :',  getCoords(wrapper).right);
+// console.log('slider_initPos_right             :', getCoords(slider).right);
+console.log('slider_initPos_left              :', getCoords(slider).left);
+console.log('wrapper_initPos_left             :',  getCoords(wrapper).left);
+console.log('wrapper_width                    :', wrapper_width);
+console.log('slider_width                     :', slider_width);
+console.log('slide_width                      :', slide_width);
+console.log('widthSlideAndGapValue            :', widthSlideAndGapValue);
+console.log('difSizeBetween_wrapper_Slider    :', difSizeBetween_wrapper_Slider);
 console.log('======================================================');
 
 
+
+let valueToNextSlideB = 0;
+
+
 // =========================================
+ 
+
 btnPrev.classList.add('disabled');
+
 
 btnPrev.addEventListener('click', () => {
 
-    if(currentSlide = (currentSlide-1)) {
-        currentSlide --;
-    }
+  currentSlide --;
+  
+  let valueToNextSlideA = valueToNextSlideB * currentSlide;
+  let valueLeftPositionSlider = getCoords(slider).left;
+  let valueLeftPositionwrapper = getCoords(wrapper).left;
+  
+  let conditionA = ( valueToNextSlideA - valueLeftPositionwrapper) - difSizeBetween_wrapper_Slider;
+  
 
-    let valueToNextSlide = widthSlideAndGapValue * currentSlide;
-    let valueLeftPositionSlider = getCoords(slider).left;
-    let valueLeftPositionWrapperSlide = getCoords(wrapperSlide).left;
-    
-    let condition = ( valueToNextSlide - valueLeftPositionWrapperSlide) - difSizeBetween_WrapperSlide_Slider;
-
-
-
-    
-    console.log('slider_LeftPosition       :', getCoords(slider).left);
-    console.log('wrapperSlide_LeftPosition :', getCoords(wrapperSlide).left);
-    console.log('difSizeBetween_WrapperSlide_Slider                :', difSizeBetween_WrapperSlide_Slider);
-    console.log('valueToNextSlide           :', valueToNextSlide);
-    console.log('condition                       :', condition);
-    console.log('currentSlide               :', currentSlide);
+    console.log('slider_LeftPosition             :', getCoords(slider).left);
+    console.log('wrapper_LeftPosition            :', getCoords(wrapper).left);
+    console.log('difSizeBetween_wrapper_Slider   :', difSizeBetween_wrapper_Slider);
+    console.log('valueToNextSlideA               :', valueToNextSlideA);
+    console.log('conditionA                      :', conditionA);
+    console.log('currentSlideA                   :', currentSlide);
     console.log('------------------------------------------------');
 
-    if( condition >= valueLeftPositionSlider || currentSlide <= 0){
+    if( conditionA <= valueLeftPositionSlider || currentSlide === 0){
+        console.log('conditionA true');
        
-        wrapperSlide.style.transform = `translateX( ${ 0 }px)`;
+        wrapper.style.transform = `translateX( ${ 0 }px)`;
+        currentSlide = 0;
         btnPrev.classList.add('disabled');
         btnNext.classList.remove('disabled');
-        currentSlide = 0;
 
-
-        console.log('test true');
         return;
     }
+
     btnNext.classList.remove('disabled');
-    
-    wrapperSlide.style.transform = `translateX( ${ -valueToNextSlide }px)`;
+    wrapper.style.transform = `translateX( ${ -valueToNextSlideA }px)`;
 });
 
 // =========================================
@@ -93,38 +101,39 @@ btnNext.addEventListener('click', () => {
 
     
     currentSlide ++;
-    let valueToNextSlide = widthSlideAndGapValue * currentSlide;
     let valueRightPositionSlider = getCoords(slider).right;
-    let valueRightPositionWrapperSlide = getCoords(wrapperSlide).right;
-    let test1 = (valueRightPositionWrapperSlide - valueToNextSlide) + difSizeBetween_WrapperSlide_Slider;
+    let valueRightPositionwrapper = getCoords(wrapper).right;
+    let valueToNextSlideB = widthSlideAndGapValue * currentSlide;
+    let conditionB = (valueRightPositionwrapper - valueToNextSlideB) + difSizeBetween_wrapper_Slider;
     
 
-    console.log('slider_rightPosition       :', getCoords(slider).right);
-    console.log('wrapperSlide_rightPosition :', getCoords(wrapperSlide).right);
-    console.log('difSizeBetween_WrapperSlide_Slider                :', difSizeBetween_WrapperSlide_Slider);
-    console.log('valueToNextSlide           :', valueToNextSlide);
-    console.log('test1                      :', test1);
-    console.log('currentSlide1              :', currentSlide);
+    console.log('slider_rightPosition            :', getCoords(slider).right);
+    console.log('wrapper_rightPosition           :', getCoords(wrapper).right);
+    console.log('difSizeBetween_wrapper_Slider   :', difSizeBetween_wrapper_Slider);
+    console.log('valueToNextSlideB               :', valueToNextSlideB);
+    console.log('conditionB                      :', conditionB);
+    console.log('currentSlideB                   :', currentSlide);
     console.log('------------------------------------------------');
 
 
 
-    if( test1 <= valueRightPositionSlider || currentSlide === maxSlide){
+    if( conditionB <= valueRightPositionSlider || currentSlide === maxSlide){
+        console.log('conditionB true');
        
-        wrapperSlide.style.transform = `translateX( ${ -difSizeBetween_WrapperSlide_Slider }px)`;
+        wrapper.style.transform = `translateX( ${ -difSizeBetween_wrapper_Slider }px)`;
         btnNext.classList.add('disabled');
         btnPrev.classList.remove('disabled');
         
-
-        console.log('test1 true');
-        currentSlide = maxSlide;
+        
+        currentSlide;
+        valueToNextSlideB;
 
         return;
     }
     
     btnPrev.classList.remove('disabled');
 
-    wrapperSlide.style.transform = `translateX( ${ -valueToNextSlide }px)`;
+    wrapper.style.transform = `translateX( ${ -valueToNextSlideB }px)`;
 });
 
 // =========================================
