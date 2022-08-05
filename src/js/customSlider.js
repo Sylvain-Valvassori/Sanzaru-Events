@@ -30,7 +30,7 @@ btnPrev.classList.add('disabled');
 let currentSlide = 0;
 let maxSlide = allSlides.length;
 
-let slide_width_and_gapValue = slide_width + gapSlideValue;
+let valueToNextSlide = slide_width + gapSlideValue;
 let sizeBetween_sliderANDwrapper =  (wrapper_width - slider_width);
 
 let valueToNextSlideB = 0;
@@ -38,15 +38,15 @@ let valueToNextSlideB = 0;
 
 // =========================| Les logs |=========================
 
-console.log('======================================================');
-// console.log('wrapper_initPos_right           :', getCoords(wrapper).right);
-// console.log('slider_initPos_right            :', getCoords(slider).right);
+console.log('=======================| INIT |=======================');
+console.log('slider_initPos_right             :', getCoords(slider).right);
+console.log('wrapper_initPos_right            :', getCoords(wrapper).right);
 console.log('slider_initPos_left              :', getCoords(slider).left);
 console.log('wrapper_initPos_left             :', getCoords(wrapper).left);
 console.log('wrapper_width                    :', wrapper_width);
 console.log('slider_width                     :', slider_width);
 console.log('slide_width                      :', slide_width);
-console.log('slide_width_and_gapValue         :', slide_width_and_gapValue);
+console.log('valueToNextSlide                 :', valueToNextSlide);
 console.log('sizeBetween_sliderANDwrapper     :', sizeBetween_sliderANDwrapper);
 console.log('======================================================');
 
@@ -65,58 +65,66 @@ function getCoords(elem) {
 }
 // =========================================
  
-
-
-// =========================| BTN PREV |=========================
 btnPrev.addEventListener('click', () => {
 
-  currentSlide --;
-  
-  let valueToNextSlideA = valueToNextSlideB * currentSlide;
-  let slider_leftPosition = getCoords(wrapper).left;
-  let wrapper_leftPosition = getCoords(slider).left;
-
-  let conditionA = ( valueToNextSlideA - slider_leftPosition) - sizeBetween_sliderANDwrapper;
-  
-
-    console.log('slider_LeftPosition             :', getCoords(slider).left);
-    console.log('wrapper_LeftPosition            :', getCoords(wrapper).left);
-    console.log('sizeBetween_sliderANDwrapper    :', sizeBetween_sliderANDwrapper);
-    console.log('valueToNextSlideA               :', valueToNextSlideA);
-    console.log('conditionA                      :', conditionA);
-    console.log('currentSlideA                   :', currentSlide);
-    console.log('------------------------------------------------');
-
-    if( conditionA <= wrapper_leftPosition || currentSlide === 0){
-        console.log('conditionA true');
-       
-        wrapper.style.transform = `translateX( ${ 0 }px)`;
-        // currentSlide = 0;
-        btnPrev.classList.add('disabled');
-        btnNext.classList.remove('disabled');
-
-        return;
-    }
-
+  if(currentSlide > 0  ){ 
+    currentSlide --;
     btnNext.classList.remove('disabled');
-    wrapper.style.transform = `translateX( ${ -valueToNextSlideA }px)`;
+  }
+
+  let valueToNextSlideB = valueToNextSlide * currentSlide;
+  let slider_rightPosition = getCoords(slider).right;
+  let wrapper_rightPosition = getCoords(wrapper).right;
+
+  let conditionB = ( sizeBetween_sliderANDwrapper - valueToNextSlideB) +  wrapper_rightPosition;
+  
+
+  console.log('---------------------| BTN PREV |---------------------------');
+  console.log('slider_rightPosition            :', getCoords(slider).right);
+  console.log('wrapper_rightPosition           :', getCoords(wrapper).right);
+  console.log('valueToNextSlideB               :', valueToNextSlideB);
+  console.log('conditionB                      :', conditionB);
+  console.log('currentSlideB                   :', currentSlide);
+  console.log('------------------------------------------------');
+
+
+
+  if( conditionB <= slider_rightPosition || currentSlide === 0){
+      console.log('conditionB true');
+     
+      wrapper.style.transform = `translateX( ${ 0 }px)`;
+      btnPrev.classList.add('disabled');
+      btnNext.classList.remove('disabled');
+      
+      
+      currentSlide;
+      valueToNextSlideB;
+
+      return;
+  }
+  
+  btnPrev.classList.remove('disabled');
+
+  wrapper.style.transform = `translateX( ${ -valueToNextSlideB }px)`;
 });
 
 // =========================| BTN NEXT |=========================
 btnNext.addEventListener('click', () => {
 
-    currentSlide ++;
+    if(currentSlide < maxSlide && getCoords(wrapper).right != getCoords(slider).right){ 
+      currentSlide ++;
+    }
 
-    let valueToNextSlideB = slide_width_and_gapValue * currentSlide;
+    let valueToNextSlideB = valueToNextSlide * currentSlide;
     let slider_rightPosition = getCoords(slider).right;
     let wrapper_rightPosition = getCoords(wrapper).right;
 
-    let conditionB = (wrapper_rightPosition - valueToNextSlideB) + sizeBetween_sliderANDwrapper;
+    let conditionB = ( sizeBetween_sliderANDwrapper - valueToNextSlideB) +  wrapper_rightPosition;
     
 
+    console.log('---------------------| BTN NEXT |---------------------------');
     console.log('slider_rightPosition            :', getCoords(slider).right);
     console.log('wrapper_rightPosition           :', getCoords(wrapper).right);
-    console.log('sizeBetween_sliderANDwrapper    :', sizeBetween_sliderANDwrapper);
     console.log('valueToNextSlideB               :', valueToNextSlideB);
     console.log('conditionB                      :', conditionB);
     console.log('currentSlideB                   :', currentSlide);
