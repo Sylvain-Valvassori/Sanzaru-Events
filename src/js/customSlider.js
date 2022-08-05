@@ -76,21 +76,21 @@ btnPrev.addEventListener('click', () => {
   let slider_rightPosition = getCoords(slider).right;
   let wrapper_rightPosition = getCoords(wrapper).right;
 
-  let conditionB = ( sizeBetween_sliderANDwrapper - valueToNextSlideB) +  wrapper_rightPosition;
+  let conditionA = ( sizeBetween_sliderANDwrapper - valueToNextSlideB) +  wrapper_rightPosition;
   
 
   console.log('---------------------| BTN PREV |---------------------------');
   console.log('slider_rightPosition            :', getCoords(slider).right);
   console.log('wrapper_rightPosition           :', getCoords(wrapper).right);
   console.log('valueToNextSlideB               :', valueToNextSlideB);
-  console.log('conditionB                      :', conditionB);
+  console.log('conditionA                      :', conditionA);
   console.log('currentSlideB                   :', currentSlide);
   console.log('------------------------------------------------');
 
 
 
-  if( conditionB <= slider_rightPosition || currentSlide === 0){
-      console.log('conditionB true');
+  if( conditionA <= slider_rightPosition || currentSlide === 0){
+      console.log('conditionA true');
      
       wrapper.style.transform = `translateX( ${ 0 }px)`;
       btnPrev.classList.add('disabled');
@@ -150,4 +150,3 @@ btnNext.addEventListener('click', () => {
 
     wrapper.style.transform = `translateX( ${ -valueToNextSlideB }px)`;
 });
-
