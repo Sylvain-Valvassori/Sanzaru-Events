@@ -1,41 +1,21 @@
-// const percentage = document.querySelector('.loaderPercentage');
-// const loader = document.querySelector('.loader');
-
-// let i=0
-
-// const percentageLoader = () => {
-
-//     percentage.innerHTML = i;
-//     i++;
-
-//     if(i > 100){ myStopFunction(); }
-// }
-
-// const myInterval = setInterval(percentageLoader, 600);
-// const myStopFunction = () => clearInterval(myInterval);
-
-// window.addEventListener('load', () => {
-//     percentageLoader();
-//     loader.style.display = 'none';
-// })
-
 
 // --------------------------------------------------
-const images = document.querySelectorAll('img');
+const images = document.querySelectorAll('.imgLoaded');
 
-async function loadImages(element) { 
+function loadImages() { 
     return new Promise((resolve, reject) => {
         
         window.onload = () => {
-                
+            let i=0;
             images.forEach((image) => {
+                i++;
                 image.complete;
-    
+                
+                console.log('image' + i);
                 resolve('all images are loaded');
                 reject('images not loaded');
             })
         };
-
 
         
     })
