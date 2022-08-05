@@ -193,42 +193,39 @@
     justify-content: center;
 
     .arrow{
-        cursor: inherit;
+        cursor: pointer;
         
         width:2rem;
         aspect-ratio: 1;
-        fill: rgba($clr-dark-blue, .3);
+       
+        fill: $clr-dark-blue;
+        transition: fill 300ms;
         
         &:last-child{
             margin-left: 2rem;
         }
         
-        &-active{
-            cursor: pointer;
-            
-            fill: $clr-dark-blue;
-            transition: fill 300ms;
-            
-            &:hover{
-                fill: $clr-electric-blue;
-            }
+        &:hover{
+            fill: $clr-electric-blue;
+        }
+        &.disabled {
+            cursor: inherit;
+            fill: rgba($clr-dark-blue, .3);
         }
     }
 }
 // ----| Cards slides show |----
 .cardStaff{
-    width: 17.2rem;
-    height: fit-content;
-    margin-left: 4rem;
-    display: inline-block;
+    width: 100%;
+    height: 100%;
 
+    // background: rgb(91, 236, 193);
 
-    &:first-child{
-        margin: 0;
-    }
+    transition: transform 300ms;
+
     .imgStaff{
         height: 24rem;
-        width: 100%;
+        width: 17.2rem;
         border-radius: 17.2rem 17.2rem 17.2rem 0;
 
         background-image: url(../images/Flower-1.png);
@@ -251,8 +248,7 @@
         text-transform: uppercase;
 
         margin-top: 2rem;
-    }
-    
+    }  
 }
 // ----| Cards slides show |----
 .cardService{

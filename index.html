@@ -66,55 +66,56 @@
                     <h3>découvrez notre équipe</h3>
                     <div class="controllerSlideShow">
                         <!-- --------- arrow left --------- -->
-                        <svg class="arrow" viewBox="0 0 40 23.2">
+                        <svg class="arrow" id='btn-prev' viewBox="0 0 40 23.2">
                             <path d="M0.2,12.2L0.2,12.2l10.2,10.7c0.4,0.4,1.1,0.4,1.5,0c0.4-0.4,0.4-1.1,0-1.5l-8.4-8.7h35.3c0.6,0,1.1-0.5,1.1-1.1c0-0.6-0.5-1.1-1.1-1.1H3.6l8.4-8.7c0.2-0.2,0.3-0.5,0.3-0.8c0-0.3-0.1-0.6-0.3-0.7C11.7,0.1,11.4,0,11.2,0c-0.3,0-0.6,0.1-0.8,0.3L0.3,10.9l0,0C-0.1,11.3,0,11.8,0.2,12.2z"/>
                         </svg>
                         <!-- --------- arrow right --------- -->
-                        <svg class="arrow arrow-active" viewBox="0 0 40 23.2">
+                        <svg class="arrow" id="btn-next" viewBox="0 0 40 23.2">
                             <path d="M39.8,11.1L39.8,11.1L29.6,0.3c-0.4-0.4-1.1-0.4-1.5,0c-0.4,0.4-0.4,1.1,0,1.5l8.4,8.7H1.1C0.5,10.5,0,11,0,11.6c0,0.6,0.5,1.1,1.1,1.1h35.3l-8.4,8.7c-0.2,0.2-0.3,0.5-0.3,0.8c0,0.3,0.1,0.6,0.3,0.7c0.2,0.2,0.5,0.3,0.7,0.3c0.3,0,0.6-0.1,0.8-0.3l10.1-10.6l0,0C40.1,11.9,40,11.4,39.8,11.1z"/>
                         </svg>
                     </div>
                 </div>
                 <!-- --------- Slide show --------- -->
-                <div class="containerSlideShow">
-                    <div class="slideShow">
+                <div class="slider">
+                    <div class="wrapper">
     
                         <!-- --------- Card Staff n°1--------- -->
-                        <div class="cardStaff">
-                            <div class="imgStaff"></div>
-                            <p class="posteStaff">Chef</p>
-                            <div class="nameStaff">
-                                <p class="firstName">julie</p>
-                                <p class="lastName">popoviez</p>
+                            <div class="slide cardStaff">
+                                <div class="imgStaff"></div>
+                                <p class="posteStaff">Chef-1</p>
+                                <div class="nameStaff">
+                                    <p class="firstName">julie</p>
+                                    <p class="lastName">popoviez</p>
+                                </div>
                             </div>
-                        </div>
                         <!-- --------- Card Staff n°2--------- -->
-                        <div class="cardStaff">
-                            <div class="imgStaff" style="background-image: url(./src/images/Flower-2.png)"></div>
-                            <p class="posteStaff">Chef</p>
-                            <div class="nameStaff">
-                                <p class="firstName">julie</p>
-                                <p class="lastName">popoviez</p>
+                            <div class="slide cardStaff">
+                                <div class="imgStaff" style="background-image: url(./src/images/Flower-2.png)"></div>
+                                <p class="posteStaff">Chef-2</p>
+                                <div class="nameStaff">
+                                    <p class="firstName">julie</p>
+                                    <p class="lastName">popoviez</p>
+                                </div>
                             </div>
-                        </div>
                         <!-- --------- Card Staff n°3--------- -->
-                        <div class="cardStaff">
-                            <div class="imgStaff" style="background-image: url(./src/images/Flower-3.png)"></div>
-                            <p class="posteStaff">Chef</p>
-                            <div class="nameStaff">
-                                <p class="firstName">julie</p>
-                                <p class="lastName">popoviez</p>
+                            <div class="slide cardStaff">
+                                <div class="imgStaff" style="background-image: url(./src/images/Flower-3.png)"></div>
+                                <p class="posteStaff">Chef-3</p>
+                                <div class="nameStaff">
+                                    <p class="firstName">julie</p>
+                                    <p class="lastName">popoviez</p>
+                                </div>
                             </div>
-                        </div>
                         <!-- --------- Card Staff n°4--------- -->
-                        <div class="cardStaff">
-                            <div class="imgStaff" style="background-image: url(./src/images/Flower-1.png)"></div>
-                            <p class="posteStaff">Chef</p>
-                            <div class="nameStaff">
-                                <p class="firstName">julie</p>
-                                <p class="lastName">popoviez</p>
+                            <div class="slide cardStaff">
+                                <div class="imgStaff" style="background-image: url(./src/images/Flower-1.png)"></div>
+                                <p class="posteStaff">Chef-4</p>
+                                <div class="nameStaff">
+                                    <p class="firstName">julie</p>
+                                    <p class="lastName">popoviez</p>
+                                </div>
                             </div>
-                        </div>
+
                     </div>
                 </div>
             </div>
@@ -318,17 +319,17 @@
     <footer class="informationsFooter">
         <a href="">conditions générales</a>
         <a href="">vie privée</a>
-        <p>mizaru 2022 ©designed and powererd by <a target="_blank" href="https://www.wibicom.be/">wibicom</a></p>
+        <p>mizaru 2022 ©designed and powererd by <a target="_blank" href="https://www.wibicom.be/">wibicom</a></p>  
     </footer>
 
 
-    <script type="text/javascript" src="./src/js/animService.js"></script>
+
+    <script type="module" src="./src/js/app.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script> -->
+    
+
 </body>
 </html>
-
-
-
-
 
 
 
