@@ -9,7 +9,7 @@ function loadImages() {
             let i=0;
             images.forEach((image) => {
                 i++;
-                image.complete;
+                image.style.backgroundImage.complete;
                 
                 console.log('image' + i);
                 resolve('all images are loaded');
