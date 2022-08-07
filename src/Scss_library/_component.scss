@@ -216,9 +216,12 @@
 }
 // ----| Cards slides show |----
 .cardStaff{
-    width: 100%;
+    max-width: fit-content;
     height: 100%;
 
+    // background: rgb(91, 236, 193);
+
+    transition: transform 300ms;
 
     .imgStaff{
         height: 24rem;
