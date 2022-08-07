@@ -1,27 +1,15 @@
-// import Swiper from './node_modules/swiper';
+import "./swiper-bundle.min.js";
 
+const swiper = new Swiper(".slider", {
+    navigation: {
+        nextEl: ".btn-next",
+        prevEl: ".btn-prev",
+    },
 
-let swiper = new Swiper(".slider", {
-            
-    // loop: true,
+    speed: 400,
+    spaceBetween: 40,
     setWrapperSize: true,
     slidesPerView: 'auto',
-    spaceBetween: 40,
+    centeredSlides: false,
 
-    navigation: {
-        nextEl: "#btn-next",
-        prevEl: "#btn-prev",
-    },
-    
-    breakpoints: {
-        370: {
-            slidesPerView: 1,
-
-        },
-        768: {
-            slidesPerView: 3,
-        },
-    },
-
-
-})
+  });
