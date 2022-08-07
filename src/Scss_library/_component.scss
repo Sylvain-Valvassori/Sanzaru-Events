@@ -208,7 +208,7 @@
         &:hover{
             fill: $clr-electric-blue;
         }
-        &.disabled {
+        &.swiper-button-disabled {
             cursor: inherit;
             fill: rgba($clr-dark-blue, .3);
         }
