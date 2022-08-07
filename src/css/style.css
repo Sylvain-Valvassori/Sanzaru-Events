@@ -78,6 +78,33 @@ address {
   font-family: "Stolzl-Thin";
   src: url("../fonts/Stolzl/Stolzl-Thin.woff2") format("woff2"), url("../fonts/Stolzl/Stolzl-Thin.woff") format("woff");
 }
+.loader {
+  z-index: 8;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+  background-color: #151f36;
+}
+.loader .imageLoader {
+  height: 20vh;
+  aspect-ratio: 1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(../images/Picto_Monkey_beige.svg);
+}
+.loader p, .loader .loaderPercentage {
+  margin-top: 2rem;
+  font-size: 2rem;
+  font-family: "Stolzl-Mideium";
+}
+
 .btn-nav {
   display: flex;
   justify-items: center;
@@ -361,8 +388,11 @@ address {
   gap: 8%;
 }
 .cardService .content .servicePicture {
+  position: absolute;
+  top: -40rem;
+  left: 0;
   width: 48.4%;
-  height: auto;
+  height: 30rem;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -371,10 +401,13 @@ address {
 @media screen and (max-width: 768px) {
   .cardService .content .servicePicture {
     width: 100%;
-    height: 48.4%;
+    height: 29rem;
   }
 }
 .cardService .content .serviceDescription {
+  position: absolute;
+  top: 0;
+  left: -40rem;
   width: 32rem;
   height: auto;
   margin-top: 2rem;
@@ -407,7 +440,7 @@ address {
   background-repeat: no-repeat;
   background-image: url(../images/3.jpg);
   opacity: 1;
-  transition: opacity 300ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
 }
 .cardService .serviceBackground::before {
   content: "";
@@ -446,44 +479,24 @@ address {
     height: 173.4rem;
   }
 }
+.cardService.active .content .servicePicture {
+  top: 0;
+}
+.cardService.active .content .serviceDescription {
+  top: 30rem;
+  left: 0;
+}
 .cardService.active .serviceDescription {
   z-index: 4;
 }
 .cardService.active .serviceBackground {
   opacity: 0;
-  transition: opacity 300ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
 }
 @media screen and (max-width: 768px) {
   .cardService.active {
     height: 60rem;
   }
-}
-
-.loader {
-  z-index: 8;
-  width: 100%;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: grid;
-  align-content: center;
-  justify-content: center;
-  justify-items: center;
-  background-color: #151f36;
-}
-.loader .imageLoader {
-  height: 20vh;
-  aspect-ratio: 1;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-image: url(../images/Picto_Monkey_beige.svg);
-}
-.loader p, .loader .loaderPercentage {
-  margin-top: 2rem;
-  font-size: 2rem;
-  font-family: "Stolzl-Mideium";
 }
 
 .allSection.home {

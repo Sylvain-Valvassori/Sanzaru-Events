@@ -1,4 +1,4 @@
-import "./swiper-bundle.min.js";
+
 
 const swiper = new Swiper(".slider", {
     navigation: {
