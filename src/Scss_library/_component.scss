@@ -387,8 +387,8 @@
         gap: 8%;
 
         .servicePicture{
-            position: absolute;
-            top: -40rem;
+            position: relative;
+            top: 0;
             left: 0;
 
             width: 48.4%;
@@ -405,9 +405,9 @@
             }
         }
         .serviceDescription{
-            position: absolute;
+            position: relative;
             top: 0;
-            left: -40rem;
+            left: 0;
 
             width: 32rem;
             height: auto;
@@ -500,7 +500,7 @@
                 top:0;
             }
             .serviceDescription{
-                top: 30rem;
+                top: 0;
                 left:0;
             }
         }

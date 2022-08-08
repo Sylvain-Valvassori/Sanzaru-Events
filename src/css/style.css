@@ -388,8 +388,8 @@ address {
   gap: 8%;
 }
 .cardService .content .servicePicture {
-  position: absolute;
-  top: -40rem;
+  position: relative;
+  top: 0;
   left: 0;
   width: 48.4%;
   height: 30rem;
@@ -405,9 +405,9 @@ address {
   }
 }
 .cardService .content .serviceDescription {
-  position: absolute;
+  position: relative;
   top: 0;
-  left: -40rem;
+  left: 0;
   width: 32rem;
   height: auto;
   margin-top: 2rem;
@@ -483,7 +483,7 @@ address {
   top: 0;
 }
 .cardService.active .content .serviceDescription {
-  top: 30rem;
+  top: 0;
   left: 0;
 }
 .cardService.active .serviceDescription {
