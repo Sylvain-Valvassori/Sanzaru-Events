@@ -3,6 +3,7 @@
 let allServices = document.querySelectorAll('.cardService');
 let openService = gsap.timeline({paused:true, reversed:true});
 
+const animations = [];
 
 allServices.forEach( service => {
     service.onclick = () => {
@@ -38,35 +39,39 @@ allServices.forEach( service => {
             width: 0,
         },
         {
-            duration: 1,
+            duration: .6,
             width: '100%',
         }
-    );
-    openService.fromTo(serviceBackground, 
+    )
+    .fromTo(serviceBackground, 
         {
             opacity: 1,
         },
         {
-            duration: .5,
+            duration: .6,
             opacity: 0,
         }
-    );
-    openService.fromTo(service, 
+    )
+    .fromTo(service, 
         {
             height: '6rem'
         },
         {
-        height: '60rem',
+            height: '60rem',
+            ease:"power3.out",
         }
-    );
-
-    openService.from( servicePicture, { 
-        duration: 0.8,
-        y: -800,
+    )
+    .from( servicePicture, { 
+        duration: .7,
+        y: -300,
+        ease:"power1.inOut",
     });
 
     openService.from(serviceDescription, { 
-        duration: 0.8,
-        x: -800,
-    });
+        duration: .8,
+        y: 300,
+        ease:"power1.inOut",
+    }, '<');
+
+
  }
