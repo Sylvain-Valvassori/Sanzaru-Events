@@ -462,10 +462,18 @@ address {
     padding: 2rem 2rem;
   }
 }
+.cardService .borderBottom {
+  z-index: 3;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: block;
+  width: 0;
+  height: 1px;
+  background: #fdf4ee;
+}
 .cardService.active {
-  transition: height 300ms ease-in-out;
   height: 30rem;
-  border-bottom: 0.1rem solid #fdf4ee;
 }
 .cardService.active .heading .cross {
   transform: rotate(-45deg);
@@ -483,15 +491,9 @@ address {
   top: 0;
 }
 .cardService.active .content .serviceDescription {
+  z-index: 4;
   top: 0;
   left: 0;
-}
-.cardService.active .serviceDescription {
-  z-index: 4;
-}
-.cardService.active .serviceBackground {
-  opacity: 0;
-  transition: opacity 200ms ease-in-out;
 }
 @media screen and (max-width: 768px) {
   .cardService.active {

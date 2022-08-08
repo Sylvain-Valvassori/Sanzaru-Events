@@ -1,29 +1,72 @@
 
 
 let allServices = document.querySelectorAll('.cardService');
+let openService = gsap.timeline({paused:true, reversed:true});
+
 
 allServices.forEach( service => {
     service.onclick = () => {
 
-        let servicePicture = service.querySelector('.servicePicture');
-        let serviceDescription = service.querySelector('.serviceDescription');
         
         if (service.classList.contains('active')){
             service.classList.remove('active'); 
             
+           
+            toggle(openService.reverse());
+            
             return;
         } 
-
+        
         service.classList.add('active');
         
-        gsap.from( servicePicture, { 
-            duration: 0.8,
-            y: -800,
-        });
-        gsap.from(serviceDescription, { 
-            duration: 1,
-            x: -800,
-        });
-      
+        toggle(service, openService.play());
     }
 });
+
+ function toggle(service) {
+    
+       
+    let borderBottom = service.querySelector('.borderBottom');
+    let servicePicture = service.querySelector('.servicePicture');
+    let serviceBackground = service.querySelector('.serviceBackground');
+    let serviceDescription = service.querySelector('.serviceDescription');
+
+
+   
+    openService.fromTo(borderBottom, 
+        {
+            width: 0,
+        },
+        {
+            duration: 1,
+            width: '100%',
+        }
+    );
+    openService.fromTo(serviceBackground, 
+        {
+            opacity: 1,
+        },
+        {
+            duration: .5,
+            opacity: 0,
+        }
+    );
+    openService.fromTo(service, 
+        {
+            height: '6rem'
+        },
+        {
+        height: '60rem',
+        }
+    );
+
+    openService.from( servicePicture, { 
+        duration: 0.8,
+        y: -800,
+    });
+
+    openService.from(serviceDescription, { 
+        duration: 0.8,
+        x: -800,
+    });
+ }

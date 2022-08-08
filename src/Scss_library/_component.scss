@@ -469,15 +469,23 @@
         height: 6rem;
         padding: 2rem 2rem;
     }
+    .borderBottom{
+        z-index: $first-plan;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        display: block;
 
+        width: 0;
+        height: 1px;
+        background: $clr-light-beige;
+    }
   
 
     &.active{
-        transition: height 300ms ease-in-out;
         height: 30rem;
-        border-bottom: .1rem solid $clr-light-beige;
-
-        
+        // border-bottom: .1rem solid $clr-light-beige;
+      
         .heading{
             .cross{
                 transform: rotate(-45deg);
@@ -500,17 +508,15 @@
                 top:0;
             }
             .serviceDescription{
+                z-index: 4;
                 top: 0;
                 left:0;
             }
         }
-        .serviceDescription{
-            z-index: 4;
-        }
-        .serviceBackground{
-            opacity: 0;
-            transition: opacity 200ms ease-in-out;
-        }
+        // .serviceBackground{
+        //     opacity: 0;
+        //     transition: opacity 200ms ease-in-out;
+        // }
 
         @include mq('mobile'){
             height: 60rem;
