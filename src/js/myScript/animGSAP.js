@@ -1,10 +1,11 @@
 
 
 let allServices = document.querySelectorAll('.cardService');
-let serviceTimeline = gsap.timeline({paused:true, reversed:true});
-let serviceTimeline2 = gsap.timeline({paused:true, reversed:true});
-
 let borderBottom, servicePicture, serviceBackground, serviceDescription;
+const serviceTimelineOpen = gsap.timeline();
+const serviceTimelineClose = gsap.timeline();
+const mediaQueryMobile = window.matchMedia("(max-width: 768px)");
+
 
 allServices.forEach( service => {
     service.onclick = () => {
@@ -13,26 +14,43 @@ allServices.forEach( service => {
         if (service.classList.contains('active')){
             service.classList.remove('active'); 
             
-           
-            closeService(service, serviceTimeline2.play());
+            if(mediaQueryMobile.matches){
+               closeServiceMobile(service, serviceTimelineClose.play());
 
+               return
+            }
+            closeService(service, serviceTimelineClose.play());
             
             return;
         } 
         
         service.classList.add('active');
         
-        openService(service, serviceTimeline.play());
+        if(mediaQueryMobile.matches){
+            openServiceMobile(service, serviceTimelineOpen.play());
+
+            return;
+        }
+
+        openService(service, serviceTimelineOpen.play());
+
     }
 });
 
-
- function openService(service) {
+const getInfoCard = (elem) => {
+    borderBottom = elem.querySelector('.borderBottom');
+    servicePicture = elem.querySelector('.servicePicture');
+    serviceBackground = elem.querySelector('.serviceBackground');
+    serviceDescription = elem.querySelector('.serviceDescription');
+    
+    return;
+ }
+const openServiceMobile= (service) => {
     
 
     getInfoCard(service);
    
-    serviceTimeline
+    serviceTimelineOpen
     .to(borderBottom, 
         {
             width: '100%',
@@ -74,53 +92,130 @@ allServices.forEach( service => {
         }, '<+.200'
     )
  }
- function closeService(service) {
-    
-    getInfoCard(service);
+const closeServiceMobile = (service) => {
 
+getInfoCard(service);
+
+
+serviceTimelineClose
+.to(serviceDescription,
+    { 
+        y: -300,
+        opacity: 0,
+        duration: .7,
+        ease:"power1.inOut",
+    },
+)
+.to( servicePicture, 
+    { 
+        y: -300,
+        duration: .6,
+        ease:"power1.inOut",
+    }, '<+.200'
+)
+.to(service, 
+    {
+        height: '6rem',
+    }, '<-.200'
+)
+.to(borderBottom, 
+    {
+        width: 0,
+        duration: .6,
+    },
+)
+.to(serviceBackground, 
+    {
+        opacity: 1,
+        duration: .6,
+    }, '<'
+)
+}
+
+const openService = (service) => {
+    
+
+    getInfoCard(service);
    
-    serviceTimeline2
-    .to(serviceDescription,
-        { 
-            y: -300,
-            opacity: 0,
-            duration: .7,
-            ease:"power1.inOut",
-        },
-    )
-    .to( servicePicture, 
-        { 
-            y: -300,
-            duration: .6,
-            ease:"power1.inOut",
-        }, '<+.200'
-    )
-    .to(service, 
-        {
-            height: '6rem',
-            
-        }, '<-.400'
-    )
+    serviceTimelineOpen
     .to(borderBottom, 
         {
-            width: 0,
-            duration: .6,
-        },
+            width: '100%',
+            duration: .8,
+        }
     )
     .to(serviceBackground, 
         {
-            opacity: 1,
+            opacity: 0,
             duration: .6,
         }, '<'
     )
+    .to(service, 
+        {
+            height: '30rem',
+            duration: 1,
+            ease: "power2.inOut",
+        }
+    )
+    .fromTo(servicePicture, 
+        {
+            y: 300,
+        },
+        { 
+            y:0,
+            duration: .7,
+            ease: "power2.out",
+        }, 
+    )
+    .fromTo(serviceDescription,
+        {
+            y: -300,
+        },
+        { 
+            y: 0,
+            duration: .7,
+            ease:"power2.out",
+        }, '<+.200'
+    )
  }
+const closeService = (service) => {
+
+getInfoCard(service);
 
 
- const getInfoCard = (elem) => {
-    borderBottom = elem.querySelector('.borderBottom');
-    servicePicture = elem.querySelector('.servicePicture');
-    serviceBackground = elem.querySelector('.serviceBackground');
-    serviceDescription = elem.querySelector('.serviceDescription');
-    
-    return;
- }
+serviceTimelineClose
+.to( servicePicture, 
+    { 
+        y: 300,
+        duration: .7,
+        ease:"power2.in",
+    }, 
+)
+.to(serviceDescription,
+    { 
+        y: -300,
+        duration: .7,
+        ease:"power2.in",
+    },'<+.200'
+)
+.to(service, 
+    {
+        height: '8rem',
+        duration: 1,
+        ease: "power2.inOut",
+    },
+)
+.to(serviceBackground, 
+    {
+        opacity: 1,
+        duration: .6,
+    },
+)
+.to(borderBottom, 
+    {
+        width: 0,
+        duration: .8,
+    }, '<+.300'
+)
+
+}
