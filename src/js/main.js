@@ -5,8 +5,8 @@ import './myScript/loader.js';
 // Module
 import "./module/swiper-bundle.min.js";
 // import "./module/gsap.min.js";
-// import "./module/ScrollTrigger.min.js";
-// import "./module/ScrollToPlugins.min.js";
+import "./module/ScrollTrigger.min.js";
+import "./module/ScrollToPlugins.min.js";
 
 
 // -----------------
