@@ -1,5 +1,5 @@
 
-
+// -------------------| animation Services |-------------------
 let allServices = document.querySelectorAll('.cardService');
 let borderBottom, servicePicture, serviceBackground, serviceDescription;
 const serviceTimelineOpen = gsap.timeline();
@@ -219,3 +219,45 @@ serviceTimelineClose
 )
 
 }
+//-------------------------------------------------------------
+
+// -------------------| animation SrollTo |-------------------
+
+const navToHome = document.querySelector('.toHome');
+const navToAbout = document.querySelectorAll('.toAbout');
+const navToContact = document.querySelectorAll('.toContact');
+const navToServices = document.querySelectorAll('.toServices');
+
+navToAbout.forEach(element => element.onclick = () => { 
+    gsap.to(window, 
+        {
+            duration: 1, 
+            scrollTo: { y: "#about",  offsetY: 10}, 
+            ease: "power2", 
+        }) 
+});
+navToContact.forEach(element => element.onclick = () => { 
+    gsap.to(window, 
+        {
+            duration: 1, 
+            scrollTo: { y: "#contact",  offsetY: 10}, 
+            ease: "power2", 
+        }) 
+});
+navToServices.forEach(element => element.onclick = () => { 
+    gsap.to(window, 
+        {
+            duration: 1, 
+            scrollTo: { y: "#services",  offsetY: 10}, 
+            ease: "power2", 
+        }) 
+});
+navToHome.onclick = () => { 
+    gsap.to(window, 
+        {
+            duration: 1, 
+            scrollTo: { y: "#home",  offsetY: 10}, 
+            ease: "power2", 
+        }) 
+}
+//-------------------------------------------------------------
