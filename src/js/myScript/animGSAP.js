@@ -32,35 +32,46 @@ allServices.forEach( service => {
 
     getInfoCard(service);
    
-    serviceTimeline.to(borderBottom, 
+    serviceTimeline
+    .to(borderBottom, 
         {
-            duration: .6,
             width: '100%',
+            duration: .6,
         }
     )
     .to(serviceBackground, 
         {
-            duration: .6,
             opacity: 0,
+            duration: .6,
         }, '<'
     )
     .to(service, 
         {
             height: '60rem',
+            duration: 1,
         }
     )
-    .to( servicePicture, 
+    .fromTo(servicePicture, 
+        {
+            y: -300,
+        },
         { 
-            duration: .7,
             y:0,
+            duration: .7,
             ease:"power1.inOut",
-        }
+        }, '<+.800'
     )
-    .to(serviceDescription,
+    .fromTo(serviceDescription,
+        {
+            y: -300,
+            opacity: 0,
+        },
         { 
-         y: 0,
+            y: 0,
+            opacity: 1,
+            duration: .6,
             ease:"power1.inOut",
-        }, '<'
+        }, '<+.200'
     )
  }
  function closeService(service) {
@@ -69,35 +80,37 @@ allServices.forEach( service => {
 
    
     serviceTimeline2
-    .to( servicePicture, 
-        { 
-            duration: .7,
-            y: -300,
-            ease:"power1.inOut",
-        }
-    )
     .to(serviceDescription,
         { 
-            duration: .8,
-            y: 300,
+            y: -300,
+            opacity: 0,
+            duration: .7,
             ease:"power1.inOut",
-        }, '<'
+        },
+    )
+    .to( servicePicture, 
+        { 
+            y: -300,
+            duration: .6,
+            ease:"power1.inOut",
+        }, '<+.200'
     )
     .to(service, 
         {
             height: '6rem',
-        }
+            
+        }, '<-.400'
     )
     .to(borderBottom, 
         {
-            duration: .6,
             width: 0,
-        }
+            duration: .6,
+        },
     )
     .to(serviceBackground, 
         {
-            duration: .6,
             opacity: 1,
+            duration: .6,
         }, '<'
     )
  }

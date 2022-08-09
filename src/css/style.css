@@ -228,7 +228,7 @@ address {
 }
 
 .footerSection {
-  z-index: 2;
+  z-index: 4;
   width: 100%;
   height: 6.6rem;
   margin-top: 6rem;
@@ -324,7 +324,7 @@ address {
   justify-content: space-between;
 }
 .cardService .heading .serviceName {
-  z-index: 3;
+  z-index: 5;
   font-size: 3rem;
   text-transform: uppercase;
   font-family: "Stolzl-Medium";
@@ -335,7 +335,7 @@ address {
   }
 }
 .cardService .heading .cross {
-  z-index: 3;
+  z-index: 5;
   width: 4rem;
   height: 0.2rem;
   position: relative;
@@ -363,7 +363,7 @@ address {
   }
 }
 .cardService .heading::after {
-  z-index: 2;
+  z-index: 4;
   content: "";
   position: absolute;
   top: -90rem;
@@ -388,6 +388,7 @@ address {
   gap: 8%;
 }
 .cardService .content .servicePicture {
+  z-index: 4;
   position: relative;
   top: 0;
   left: 0;
@@ -405,6 +406,7 @@ address {
   }
 }
 .cardService .content .serviceDescription {
+  z-index: 3;
   position: relative;
   bottom: 0;
   left: 0;
@@ -450,7 +452,6 @@ address {
   width: 100%;
   height: 100%;
   background-color: rgba(35, 45, 64, 0.5);
-  transition: background-color 300ms ease-in-out;
 }
 .cardService:hover .serviceBackground::before {
   background-color: rgba(35, 45, 64, 0.2);
@@ -463,7 +464,7 @@ address {
   }
 }
 .cardService .borderBottom {
-  z-index: 3;
+  z-index: 5;
   position: absolute;
   left: 0;
   bottom: 0;
@@ -471,9 +472,6 @@ address {
   width: 0;
   height: 1px;
   background: #fdf4ee;
-}
-.cardService.active {
-  height: 30rem;
 }
 .cardService.active .heading .cross {
   transform: rotate(-45deg);
@@ -487,20 +485,6 @@ address {
     height: 173.4rem;
   }
 }
-.cardService.active .content .servicePicture {
-  top: 0;
-}
-.cardService.active .content .serviceDescription {
-  z-index: 4;
-  top: 0;
-  left: 0;
-}
-@media screen and (max-width: 768px) {
-  .cardService.active {
-    height: 60rem;
-  }
-}
-
 .allSection.home {
   min-height: 90rem;
   padding: 3rem 7rem;
@@ -511,7 +495,7 @@ address {
   left: 0;
 }
 .allSection.home header {
-  z-index: 2;
+  z-index: 4;
   height: 12rem;
   width: 100%;
   align-self: flex-start;
@@ -571,7 +555,7 @@ address {
   }
 }
 .allSection.home h2 {
-  z-index: 2;
+  z-index: 4;
   width: clamp(70rem, 100%, 100rem);
   text-align: center;
   font-size: 8.4rem;
@@ -766,7 +750,7 @@ address {
   background-color: #fde8db;
 }
 .contact .contentContact {
-  z-index: 2;
+  z-index: 4;
   height: auto;
   width: 100%;
   margin: 2rem 0;
@@ -893,7 +877,7 @@ body .allSection {
   }
 }
 body .titleSection {
-  z-index: 2;
+  z-index: 4;
   width: 100%;
   margin-bottom: 6rem;
   font-size: 8.4rem;
