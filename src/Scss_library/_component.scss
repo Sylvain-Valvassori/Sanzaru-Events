@@ -352,6 +352,15 @@
                             47.97% 47.97% at 52.03% 50%,
                             $clr-dark-blue 0%, 
                             rgba(35, 45, 64, 0) 59.9%);
+
+            @include mq('mobile'){
+                &{
+                    top: -99rem;
+                    left: -96rem;
+                    width: 170rem;
+                    height: 173.4rem;
+                }
+            }
         }
 
         @include mq('mobile'){

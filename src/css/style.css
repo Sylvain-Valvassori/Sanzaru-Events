@@ -372,6 +372,14 @@ address {
   background: radial-gradient(47.97% 47.97% at 52.03% 50%, #151f36 0%, rgba(35, 45, 64, 0) 59.9%);
 }
 @media screen and (max-width: 768px) {
+  .cardService .heading::after {
+    top: -99rem;
+    left: -96rem;
+    width: 170rem;
+    height: 173.4rem;
+  }
+}
+@media screen and (max-width: 768px) {
   .cardService .heading {
     height: 2rem;
   }
