@@ -67,6 +67,7 @@ const openServiceMobile= (service) => {
         {
             height: '60rem',
             duration: 1,
+            ease: "power2.inOut",
         }
     )
     .fromTo(servicePicture, 
@@ -76,20 +77,20 @@ const openServiceMobile= (service) => {
         { 
             y:0,
             duration: .7,
-            ease:"power1.inOut",
-        }, '<+.800'
+            ease:"power1.out",
+        }, '<+.500'
     )
     .fromTo(serviceDescription,
         {
-            y: -300,
+            y: -250,
             opacity: 0,
         },
         { 
             y: 0,
             opacity: 1,
-            duration: .6,
-            ease:"power1.inOut",
-        }, '<+.200'
+            duration: .7,
+            ease:"power1.out",
+        }, '>-.200'
     )
  }
 const closeServiceMobile = (service) => {
@@ -100,23 +101,25 @@ getInfoCard(service);
 serviceTimelineClose
 .to(serviceDescription,
     { 
-        y: -300,
+        y: -250,
         opacity: 0,
         duration: .7,
-        ease:"power1.inOut",
+        ease:"power1.in",
     },
 )
 .to( servicePicture, 
     { 
         y: -300,
-        duration: .6,
-        ease:"power1.inOut",
-    }, '<+.200'
+        duration: .7,
+        ease:"power1.in",
+    }, '>-.200'
 )
 .to(service, 
     {
         height: '6rem',
-    }, '<-.200'
+        duration: 1,
+        ease: "power2.inOut",
+    },'<+.500'
 )
 .to(borderBottom, 
     {
