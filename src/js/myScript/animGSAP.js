@@ -4,7 +4,7 @@ let allServices = document.querySelectorAll('.cardService');
 let serviceTimeline = gsap.timeline({paused:true, reversed:true});
 let serviceTimeline2 = gsap.timeline({paused:true, reversed:true});
 
-const animations = [];
+let borderBottom, servicePicture, serviceBackground, serviceDescription;
 
 allServices.forEach( service => {
     service.onclick = () => {
@@ -26,99 +26,88 @@ allServices.forEach( service => {
     }
 });
 
+
  function openService(service) {
     
-       
-    let borderBottom = service.querySelector('.borderBottom');
-    let servicePicture = service.querySelector('.servicePicture');
-    let serviceBackground = service.querySelector('.serviceBackground');
-    let serviceDescription = service.querySelector('.serviceDescription');
 
-
+    getInfoCard(service);
    
-    serviceTimeline.fromTo(borderBottom, 
-        {
-            width: 0,
-        },
+    serviceTimeline.to(borderBottom, 
         {
             duration: .6,
             width: '100%',
         }
     )
-    .fromTo(serviceBackground, 
-        {
-            opacity: 1,
-        },
+    .to(serviceBackground, 
         {
             duration: .6,
             opacity: 0,
-        }
+        }, '<'
     )
-    .fromTo(service, 
-        {
-            height: '6rem'
-        },
+    .to(service, 
         {
             height: '60rem',
-            ease:"power3.out",
         }
     )
-    .from( servicePicture, { 
-        duration: .7,
-        y: -300,
-        ease:"power1.inOut",
-    })
-    .from(serviceDescription, { 
-        duration: .8,
-        y: 300,
-        ease:"power1.inOut",
-    }, '<');
+    .to( servicePicture, 
+        { 
+            duration: .7,
+            y:0,
+            ease:"power1.inOut",
+        }
+    )
+    .to(serviceDescription,
+        { 
+         y: 0,
+            ease:"power1.inOut",
+        }, '<'
+    )
  }
  function closeService(service) {
     
-       
-    let borderBottom = service.querySelector('.borderBottom');
-    let servicePicture = service.querySelector('.servicePicture');
-    let serviceBackground = service.querySelector('.serviceBackground');
-    let serviceDescription = service.querySelector('.serviceDescription');
-
+    getInfoCard(service);
 
    
-    serviceTimeline2.fromTo(borderBottom, 
+    serviceTimeline2
+    .to( servicePicture, 
+        { 
+            duration: .7,
+            y: -300,
+            ease:"power1.inOut",
+        }
+    )
+    .to(serviceDescription,
+        { 
+            duration: .8,
+            y: 300,
+            ease:"power1.inOut",
+        }, '<'
+    )
+    .to(service, 
         {
-            width: '100%',
-        },
+            height: '6rem',
+        }
+    )
+    .to(borderBottom, 
         {
             duration: .6,
             width: 0,
         }
     )
-    .fromTo(serviceBackground, 
-        {
-            opacity: 0,
-        },
+    .to(serviceBackground, 
         {
             duration: .6,
             opacity: 1,
-        }
+        }, '<'
     )
-    .fromTo(service, 
-        {
-            height: '60rem'
-        },
-        {
-            height: '6rem',
-            ease:"power3.out",
-        }
-    )
-    .to( servicePicture, { 
-        duration: .7,
-        y: -300,
-        ease:"power1.inOut",
-    })
-    .to(serviceDescription, { 
-        duration: .8,
-        y: 300,
-        ease:"power1.inOut",
-    }, '<');
+ }
+
+
+ const getInfoCard = (elem) => {
+    borderBottom = elem.querySelector('.borderBottom');
+    servicePicture = elem.querySelector('.servicePicture');
+    serviceBackground = elem.querySelector('.serviceBackground');
+    serviceDescription = elem.querySelector('.serviceDescription');
+    
+    return;
  }
