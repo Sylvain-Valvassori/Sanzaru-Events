@@ -258,6 +258,11 @@
         font-family: "Stolzl-Light";
         letter-spacing: .1em;
 
+        display: flex;
+        flex-wrap: wrap;
+        word-break: break-word;
+        width: 17.2rem;
+
         margin: 2rem 0 0 0;
         padding-bottom: .6rem;
         border-bottom: .1rem solid rgba($clr-electric-blue, .3);

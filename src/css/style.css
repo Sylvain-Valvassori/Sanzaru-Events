@@ -291,6 +291,10 @@ address {
   font-size: 1.4rem;
   font-family: "Stolzl-Light";
   letter-spacing: 0.1em;
+  display: flex;
+  flex-wrap: wrap;
+  word-break: break-word;
+  width: 17.2rem;
   margin: 2rem 0 0 0;
   padding-bottom: 0.6rem;
   border-bottom: 0.1rem solid rgba(60, 99, 170, 0.3);
