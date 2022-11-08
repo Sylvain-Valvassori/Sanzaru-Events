@@ -1,1 +1,1 @@
-# Mizaru-event
+# Sanzaru-Events
