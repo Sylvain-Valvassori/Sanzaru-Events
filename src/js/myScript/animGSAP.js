@@ -231,10 +231,12 @@ const navToAbout = document.querySelectorAll('.toAbout');
 const navToContact = document.querySelectorAll('.toContact');
 const navToServices = document.querySelectorAll('.toServices');
 
+const timeScrollTo = 1.5;
+
 navToAbout.forEach(element => element.onclick = () => { 
     gsap.to(window, 
         {
-            duration: 1, 
+            duration: timeScrollTo, 
             scrollTo: { y: "#about",  offsetY: 10}, 
             ease: "power2", 
         }) 
@@ -242,7 +244,7 @@ navToAbout.forEach(element => element.onclick = () => {
 navToContact.forEach(element => element.onclick = () => { 
     gsap.to(window, 
         {
-            duration: 1, 
+            duration: timeScrollTo, 
             scrollTo: { y: "#contact",  offsetY: 10}, 
             ease: "power2", 
         }) 
@@ -250,7 +252,7 @@ navToContact.forEach(element => element.onclick = () => {
 navToServices.forEach(element => element.onclick = () => { 
     gsap.to(window, 
         {
-            duration: 1, 
+            duration: timeScrollTo, 
             scrollTo: { y: "#services",  offsetY: 10}, 
             ease: "power2", 
         }) 
@@ -258,7 +260,7 @@ navToServices.forEach(element => element.onclick = () => {
 navToHome.forEach(element => element.onclick = () => { 
     gsap.to(window, 
         {
-            duration: 1, 
+            duration: timeScrollTo + .5, 
             scrollTo: { y: "#home",  offsetY: 10}, 
             ease: "power2", 
         }) 

@@ -463,6 +463,7 @@ address {
   width: 100%;
   height: 100%;
   background-color: rgba(35, 45, 64, 0.5);
+  transition: background-color 300ms ease-in-out;
 }
 .cardService:hover .serviceBackground::before {
   background-color: rgba(35, 45, 64, 0.2);

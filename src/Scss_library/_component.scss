@@ -455,6 +455,7 @@
             height: 100%;
 
             background-color: rgba( $clr-light-blue, .5);
+            transition: background-color 300ms ease-in-out;
         }
     }
 
