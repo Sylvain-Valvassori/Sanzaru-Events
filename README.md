@@ -1,7 +1,9 @@
 # Sanzaru-Events
 <p align="right"><img src="https://badgen.net/badge/MADE BY/Sylvain Valvassori/black"> <img src="https://badgen.net/github/last-commit/Sylvain-Valvassori/Sanzaru-Events/main"> <img src="https://badgen.net/github/release/Sylvain-Valvassori/react-movie/black?icon=bitcoin-lightning"> 
 
-<img src="https://badgen.net/github/last-commit/Sylvain-Valvassori/Sanzaru-Events/main">
+<img src="https://badgen.net/github/last-commit/Sylvain-Valvassori/Sanzaru-Events">
+
+https://github.com/Sylvain-Valvassori/Sanzaru-Events/commits/main
 <br><br>
 
 <h1 align="center">Sanzaru-Events</h1>
