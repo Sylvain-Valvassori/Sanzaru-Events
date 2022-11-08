@@ -15,11 +15,10 @@ function loadImages() {
                 resolve('all images are loaded');
                 reject('images not loaded');
             })
-        };
-
-        
+        }
     })
 }
+
 function loadFonts() { 
     return new Promise((resolve, reject) => {
         setTimeout(() => { 

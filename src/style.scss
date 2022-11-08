@@ -18,7 +18,12 @@ body {
     flex-wrap:wrap;
     gap: 1rem;
     padding: 1rem;
-    
+
+    // padding: 1rem 5rem;
+    // @include mq('laptop'){
+    //     padding: 1rem;
+
+    // }
     a:hover{
         color: $clr-cuivre;
     }
@@ -73,4 +78,6 @@ body {
             justify-content: space-around;
         }
     }
+
+    
 }

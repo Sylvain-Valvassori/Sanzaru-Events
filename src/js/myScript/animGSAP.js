@@ -226,7 +226,7 @@ serviceTimelineClose
 
 // -------------------| animation SrollTo |-------------------
 
-const navToHome = document.querySelector('.toHome');
+const navToHome = document.querySelectorAll('.toHome');
 const navToAbout = document.querySelectorAll('.toAbout');
 const navToContact = document.querySelectorAll('.toContact');
 const navToServices = document.querySelectorAll('.toServices');
@@ -255,12 +255,13 @@ navToServices.forEach(element => element.onclick = () => {
             ease: "power2", 
         }) 
 });
-navToHome.onclick = () => { 
+navToHome.forEach(element => element.onclick = () => { 
     gsap.to(window, 
         {
             duration: 1, 
             scrollTo: { y: "#home",  offsetY: 10}, 
             ease: "power2", 
         }) 
-}
+});
+
 //-------------------------------------------------------------
