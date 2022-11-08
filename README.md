@@ -1,8 +1,7 @@
 # Sanzaru-Events
 <p align="right"><img src="https://badgen.net/badge/MADE BY/Sylvain Valvassori/black"> 
 
-<img src="https://badgen.net/github/last-commit/Sylvain-Valvassori/Sanzaru-Events/main">
-https://badgen.net/github/last-commit/micromatch/micromatch
+<img src="https://badgen.net/github/last-commit/Sylvain-Valvassori/Sanzaru-Events">
 
 
 <br><br>
