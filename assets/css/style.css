@@ -848,6 +848,7 @@ body {
   flex-wrap: wrap;
   gap: 2rem;
   padding: 1rem;
+  height: min-content;
 }
 body.disabled {
   overflow: hidden;
@@ -889,8 +890,10 @@ section .section__title {
 }
 
 .page__footer {
+  z-index: 4;
   width: 100%;
   min-height: 4rem;
+  margin: 3rem 0 1rem 0;
   padding: 1rem 0;
   display: flex;
   align-items: center;

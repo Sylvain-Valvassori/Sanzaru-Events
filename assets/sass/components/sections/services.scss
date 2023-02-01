@@ -1,10 +1,11 @@
 @use '../../library' as *;
 
 
-
 .services{
     color: $clr-light-beige;
     background-color: $clr-light-blue;
+
+    // position: relative;
 
     &__description{
         $width-p: 60%;

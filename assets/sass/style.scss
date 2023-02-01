@@ -18,6 +18,9 @@ body {
     &.disabled{
         overflow: hidden;
     }
+
+
+    height: min-content;
 }
 
 a:hover{
@@ -28,8 +31,6 @@ section{
     width: 100%;
     min-height: $max-height;
 
-
-    
     display: flex;
     flex-wrap:wrap;
     
@@ -62,8 +63,12 @@ section{
 }
 
 .page__footer{
+    z-index: $second-plan;
+    
     width: 100%;
     min-height: 4rem;
+
+    margin: 3rem 0 1rem 0;
     padding: 1rem 0;
 
     display: flex;
@@ -72,10 +77,10 @@ section{
     gap: 2rem;
 
     font-size: 1rem;
-    color:$clr-light-beige;
+    color: $clr-light-beige;
     text-transform: uppercase;
     font-family: "Stolzl-Regular";
-
+    
     @include max-mq('tablet'){
         flex-wrap: wrap;
         justify-content: space-around;

@@ -28,8 +28,3 @@ $breakpoints: (
 @mixin max-mq ($breakpoint) {
   @media screen and (max-width: map-get($breakpoints, $breakpoint)) { @content; }        
 }
-  
-
-// mobile 768 -> tablet
-// tablet 960 -> tablet XL
-// laptop 1600 -> laptop XL
