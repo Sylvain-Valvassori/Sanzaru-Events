@@ -1,0 +1,123 @@
+@use '../../library' as *;
+
+
+.about{
+    
+
+    color: $clr-light-blue;
+    background-color: $clr-light-beige;
+
+    & .section__title{
+        max-width: 62.8rem;
+        margin-bottom: 6rem;
+    }
+
+    &__wrapper{
+        // width: 100%;
+        // height: 100%;
+        // margin-bottom: 6rem;
+
+        display: flex;
+        justify-content: space-between;
+
+        gap: 12rem;
+
+        .content{
+            
+            &--left{
+                max-width: 62.8rem;
+                width: 100%;
+                height: 100%;
+            
+                h3{
+                    font-size: 2rem;
+                    font-family: "Stolzl-Regular";
+                    line-height: 3rem;
+                    text-transform: uppercase;
+        
+                    margin-bottom: 4rem;
+                }
+                
+                p{
+                    font-size: 1.4rem;
+                    font-family: "Stolzl-Light";
+                    line-height: 2.24rem;
+                    
+                    column-count: 2;
+                    column-gap: 4rem;
+
+                    @include max-mq('tablet'){
+                        column-count: initial;
+                    }
+                }
+            }
+        
+            &--right{
+                width: 100%;
+                max-width: 50%;
+                min-height: max-content;
+                margin-top: -20rem;            
+                
+                display: flex;
+                flex-wrap: wrap;
+                
+
+                &__heading{
+                    width: 100%;
+                    height: fit-content;
+                    
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    h3{
+                        max-width: 100%;
+                        padding-bottom: 2rem;
+
+                        font-size: 2.4rem;
+                        font-family: "Stolzl-Light";
+                        letter-spacing: 0.12em;
+                        text-transform: uppercase;
+                    }
+                }
+
+                .slider{
+                    height: 100%;
+                    width: 100%;
+                    // max-width: max-content;
+                    margin-top: 2rem;
+                    overflow: hidden;
+
+                    .wrapper{
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        
+                        // gap: 4rem;
+
+                        transition: transform 500ms ease-in-out;
+                    }
+
+                }
+            }
+        }
+        @include max-mq('tablet-XL'){
+            flex-wrap:wrap;
+            height: fit-content;
+            width: 100%;
+
+            .content{
+
+                &--left{
+                    margin-bottom: 16rem;
+                    width: 100%;
+                }
+
+                &--right{
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+}

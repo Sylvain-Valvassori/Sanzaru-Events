@@ -1,0 +1,83 @@
+@use './library' as *;
+@use './components' as *;
+
+html{
+    color: $clr-light-beige;
+    font-family: $fnt-main;
+    
+    background-color: $clr-main;
+}
+body {    
+    background-color: $clr-dark-blue;
+
+    display: flex;
+    flex-wrap:wrap;
+    gap: $gap-section;
+    padding: $padding-body;
+
+    &.disabled{
+        overflow: hidden;
+    }
+}
+
+a:hover{
+    color: $clr-cuivre;
+}
+
+section{
+    width: 100%;
+    min-height: $max-height;
+
+
+    
+    display: flex;
+    flex-wrap:wrap;
+    
+    // padding: 7rem 7rem 3rem 7rem ;
+    padding: $padding-height $padding-width;
+    padding-bottom: $padding-bottom;
+    overflow: hidden;
+    border-radius: 4rem;
+
+    .section__title{
+        z-index: $second-plan;
+
+        width: 100%;
+        margin-bottom: 6rem;
+
+        font-size: 8.4rem;
+        font-family: "Stolzl-Book";
+        line-height: 8.8rem;
+
+        @include max-mq('tablet'){
+            font-size: 6.4rem;
+            line-height: 6rem;
+        }
+    }
+    @include max-mq('tablet'){
+        padding: 3rem 3rem;
+        padding-bottom: 0;
+    }
+    
+}
+
+.page__footer{
+    width: 100%;
+    min-height: 4rem;
+    padding: 1rem 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 2rem;
+
+    font-size: 1rem;
+    color:$clr-light-beige;
+    text-transform: uppercase;
+    font-family: "Stolzl-Regular";
+
+    @include max-mq('tablet'){
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+}

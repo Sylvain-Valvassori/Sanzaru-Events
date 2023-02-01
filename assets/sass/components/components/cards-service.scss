@@ -1,0 +1,232 @@
+@use '../../library' as *;
+
+
+// ----| Cards slides show |----
+.service{
+    cursor: pointer;
+
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8rem;
+    padding: 2rem 4rem;
+    overflow: hidden;
+
+    &:hover{
+        .service__background::before{
+            background-color: rgba( $clr-light-blue, .2);
+            transition: background-color 300ms ease-in-out;
+        }
+    }
+    
+    &__heading{
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        h3{
+            z-index: $first-plan;
+
+            font-size: 3rem;
+            text-transform: uppercase;
+            font-family: "Stolzl-Medium";
+
+            @include max-mq('tablet'){
+                font-size: 2rem;
+            }
+        }
+        .cross{
+            z-index: $first-plan;
+
+            width: 4rem;
+            height: .2rem;
+
+            position: relative;
+            top: 0;
+            left: 0;
+
+            background-color: $clr-light-beige;
+            transition: transform 300ms ease-in-out;
+
+            &::after{
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width:.2rem;
+                height: 4rem;
+                transform: translate(-50%, -50%);
+                background-color: $clr-light-beige;
+            }
+
+            @include max-mq('tablet'){
+                width: 2rem;
+
+                &::after{
+                    height: 2rem;
+                }
+            }
+        }  
+
+        &::after{
+            z-index: $second-plan;
+
+            content: "";
+            position: absolute;
+            top: -90rem;
+            left: -90rem;
+            width: 180rem;
+            height: 181.4rem;
+
+
+            background: radial-gradient(
+                            47.97% 47.97% at 52.03% 50%,
+                            $clr-dark-blue 0%, 
+                            rgba(35, 45, 64, 0) 59.9%);
+
+            @include max-mq('tablet'){
+                &{
+                    top: -99rem;
+                    left: -96rem;
+                    width: 170rem;
+                    height: 173.4rem;
+                }
+            }
+        }
+
+        @include max-mq('tablet'){
+            height: 2rem;
+        }
+    }
+    &__infos {
+        z-index: $last-plan;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+
+        width: 100%;
+        height: 100%;
+        display: flex;
+        gap: 8%;
+
+        &__img{
+            z-index: $second-plan ;
+            position: relative;
+            top: 0;
+            left: 0;
+
+            width: 48.4%;
+            height: 30rem;
+    
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: url(../images/3.jpg);
+
+            @include max-mq('tablet'){
+                width: 100%;
+                height:  29rem;
+            }
+        }
+        &__description{
+            z-index: $third-plan ;
+
+            position: relative;
+            bottom: 0;
+            left: 0;
+
+            width: 32rem;
+            height: auto;
+            margin-top: 2rem;
+            margin-right: 8rem;
+
+            font-size: 1.5em;
+            line-height: 2.25rem;
+            font-family: "Stolzl-Light";
+
+
+            @include max-mq('tablet'){
+                width: 100%;
+                margin-right: 0;
+            }
+        }
+
+        @include max-mq('tablet'){
+            flex-wrap: wrap;
+            gap: 0;  
+        }
+    }
+    &__background{
+        z-index: $last-plan;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url(../images/3.jpg);
+        
+        opacity: 1;
+        transition: opacity 200ms ease-in-out;
+        &::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+            background-color: rgba( $clr-light-blue, .5);
+            transition: background-color 300ms ease-in-out;
+        }
+    }
+    &__bottom-line{
+        z-index: $first-plan;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        display: block;
+
+        width: 0;
+        height: 1px;
+        background: $clr-light-beige;
+    }
+  
+    &--active{
+        // height: 30rem;
+        // border-bottom: .1rem solid $clr-light-beige;
+        @include max-mq('tablet'){
+            // height: 60rem;
+        }
+        .service__heading{
+            .cross{
+                transform: rotate(-45deg);
+                transition: transform 300ms ease-in-out;
+            }
+
+            @include max-mq('tablet'){
+                &::after{
+                    top: -99rem;
+                    left: -96rem;
+                    width: 170rem;
+                    height: 173.4rem;
+                }
+            }
+        } 
+    }
+    @include max-mq('tablet'){
+        height: 6rem;
+        padding: 2rem 2rem;
+    }
+}

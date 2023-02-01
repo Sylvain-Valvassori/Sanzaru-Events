@@ -1,0 +1,35 @@
+// ---| tableau de breakpoint |---
+$breakpoints: (
+  mobile-S            :     1px * 320, 
+  mobile-M            :     1px * 375, 
+  mobile-L            :     1px * 425, 
+  tablet              :     1px * 768, 
+  tablet-M            :     1px * 830, 
+  tablet-L             :     1px * 900, 
+  tablet-XL            :     1px * 960, 
+  laptop              :     1px * 1024, 
+  laptop-M            :     1px * 1280, 
+  laptop-L            :     1px * 1440, 
+  laptop-XL           :     1px * 1600,
+  big-screen          :     1px * 1800,
+  4k                  :     1px * 2560,
+);
+
+//=============================| Responsive mobile first |=============================
+//---------|>  !!ATTENTION!! ordre des includes du plus petit au plus grand  <|---------
+//--------------------------------------------------------------------------------------
+@mixin min-mq ($breakpoint) {
+  @media screen and (min-width: map-get($breakpoints, $breakpoint)) { @content; }        
+}
+
+//=============================| Responsive desktop first |==============================
+//---------|>  !!ATTENTION!! ordre des includes du plus grand au plus petit  <|---------
+//--------------------------------------------------------------------------------------
+@mixin max-mq ($breakpoint) {
+  @media screen and (max-width: map-get($breakpoints, $breakpoint)) { @content; }        
+}
+  
+
+// mobile 768 -> tablet
+// tablet 960 -> tablet XL
+// laptop 1600 -> laptop XL

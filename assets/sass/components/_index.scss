@@ -1,0 +1,16 @@
+// ----| sections |----
+@forward './sections/home';
+@forward './sections/about';
+@forward './sections/services';
+@forward './sections/contact';
+
+// ----| components |----
+@forward './components/loader.scss';
+@forward './components/btn-contact.scss';
+@forward './components/btn-nav.scss';
+@forward './components/cards-service.scss';
+@forward './components/cards-team.scss';
+@forward './components/controller-slider.scss';
+@forward './components/footer-section.scss';
+@forward './components/separator.scss';
+

@@ -5,58 +5,57 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
 
-    <link rel='stylesheet' href='src\css\style.css'>
+    <link rel='stylesheet' href='assets/css/style.css'>
     <title>Sanzaru-Events</title>
 </head>
-<body>
+<body class='disabled'>
     <section class='loader'>
-        <div class="imageLoader"></div>
-        <!-- <p><span class='loaderPercentage'>0</span> %</p> -->
+        <div class='loader__img'></div>
     </section>
     <!-- ---------| home |--------- -->
-    <section class=" allSection home" id="home">
+    <section class='home' id='home'>
         <header>
-            <img class="logoSanzaruEvents" src="./src/images/Sanzaru_evnts_logotype_beige_light.svg" alt="Monkey">
-            <img class="pictoMonkey" src="./src/images/Picto_Monkey.svg" alt="Monkey">
+            <div class='logo-SE'>
+                <img src='./assets/images/Sanzaru_evnts_logotype_beige_light.svg' alt='Monkey'>
+            </div>
+            <!-- <img class='pictoMonkey' src='./assets/images/Picto_Monkey.svg' alt='Monkey'> -->
             
             <nav>
-                <a class="toAbout">à propos</a>
-                <a class="toServices">services</a>
-                <a class="toContact">contact</a>
+                <a class='toAbout'>à propos</a>
+                <a class='toServices'>services</a>
+                <a class='toContact'>contact</a>
             </nav>
         </header>
 
         <h2>lorem ipsum dolor sit amet</h2>
 
         <!-- --------- nav footer --------- -->
-        <footer class="footerSection">
-            <div class="separator">
-                <div class="lineSquare lineSquare-beige"></div>
+        <footer class='footer__section'>
+            <div class='separator'>
+                <div class='lineSquare lineSquare--beige'></div>
             </div>
-            <nav>
-               
-                <a class="btn-nav btn-nav-beige toAbout">
-                    <svg class="losange" viewBox="0 0 16 20">
-                        <path d="M8.29794 0L0.930664 9.94887L8.29794 20L15.6642 9.94887L8.29794 0ZM4.67849 9.94887L8.29794 5.22737L11.9163 9.94887L8.29794 14.7737L4.67849 9.94887Z" />
+            <nav>        
+                <a class='btn-nav btn-nav--beige toAbout'>
+                    <svg class='losange' viewBox='0 0 16 20'>
+                        <path d='M8.29794 0L0.930664 9.94887L8.29794 20L15.6642 9.94887L8.29794 0ZM4.67849 9.94887L8.29794 5.22737L11.9163 9.94887L8.29794 14.7737L4.67849 9.94887Z' />
                     </svg>
                     <h3>à propos</h3>
                 </a>
-            
-                <a href="mailto:" class="btn-contact btn-contact-beige">contactez-nous</a>
+                <a href='mailto:' class='btn-contact btn-contact--beige'>contactez-nous</a>
             </nav>
         </footer>
-        <div class="backgroundHome imgLoaded">
-            <div class="layerColor"></div>
+        <div class='home__background imgLoaded'>
+            <div class='layerColor'></div>
         </div>
     </section>
-
     <!-- ---------| about |--------- -->
-    <section class=" allSection about" id="about">          
-        <h2 class="titleSection">Qui sommes nous</h2>
+    <section class='about' id='about'>          
+        <h2 class='section__title'>Qui sommes nous</h2>
        
-        <div class="containerAboutInfos">
-            <div class="contentLeft">
-                <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit tristique pharetra porta blandit. Augue a, phasellus diam non, mattis.</h3>
+        <div class='about__wrapper'>
+            <div class='content content--left'>
+                <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit tristique pharetra porta blandit. Augue a, phasellus diam non, mattis.
+                </h3>
         
                 <p>Lorem ipsum dolor sit amet, consectetr adipiscing elit. Viverra sed platea cras ipsum tristique facilisis. Purus penatibus risus mattis in sit duis quam. Nibh in quis neque phasellus massa aliquet enim quam.
                     <br>
@@ -65,280 +64,263 @@
                 </p>
             </div>
     
-            <div class="contentRight">
-                <div class="headingContentRight">
+            <div class='content content--right'>
+                <div class='content--right__heading'>
                     <h3>découvrez notre équipe</h3>
-                    <div class="controllerSlideShow">
+                    <div class='controller-slider'>
                         <!-- --------- arrow left --------- -->
-                        <svg class="arrow btn-prev" viewBox="0 0 40 23.2">
-                            <path d="M0.2,12.2L0.2,12.2l10.2,10.7c0.4,0.4,1.1,0.4,1.5,0c0.4-0.4,0.4-1.1,0-1.5l-8.4-8.7h35.3c0.6,0,1.1-0.5,1.1-1.1c0-0.6-0.5-1.1-1.1-1.1H3.6l8.4-8.7c0.2-0.2,0.3-0.5,0.3-0.8c0-0.3-0.1-0.6-0.3-0.7C11.7,0.1,11.4,0,11.2,0c-0.3,0-0.6,0.1-0.8,0.3L0.3,10.9l0,0C-0.1,11.3,0,11.8,0.2,12.2z"/>
+                        <svg class='arrow btn-prev' viewBox='0 0 40 23.2'>
+                            <path d='M0.2,12.2L0.2,12.2l10.2,10.7c0.4,0.4,1.1,0.4,1.5,0c0.4-0.4,0.4-1.1,0-1.5l-8.4-8.7h35.3c0.6,0,1.1-0.5,1.1-1.1c0-0.6-0.5-1.1-1.1-1.1H3.6l8.4-8.7c0.2-0.2,0.3-0.5,0.3-0.8c0-0.3-0.1-0.6-0.3-0.7C11.7,0.1,11.4,0,11.2,0c-0.3,0-0.6,0.1-0.8,0.3L0.3,10.9l0,0C-0.1,11.3,0,11.8,0.2,12.2z'/>
                         </svg>
                         <!-- --------- arrow right --------- -->
-                        <svg class="arrow btn-next" viewBox="0 0 40 23.2">
-                            <path d="M39.8,11.1L39.8,11.1L29.6,0.3c-0.4-0.4-1.1-0.4-1.5,0c-0.4,0.4-0.4,1.1,0,1.5l8.4,8.7H1.1C0.5,10.5,0,11,0,11.6c0,0.6,0.5,1.1,1.1,1.1h35.3l-8.4,8.7c-0.2,0.2-0.3,0.5-0.3,0.8c0,0.3,0.1,0.6,0.3,0.7c0.2,0.2,0.5,0.3,0.7,0.3c0.3,0,0.6-0.1,0.8-0.3l10.1-10.6l0,0C40.1,11.9,40,11.4,39.8,11.1z"/>
+                        <svg class='arrow btn-next' viewBox='0 0 40 23.2'>
+                            <path d='M39.8,11.1L39.8,11.1L29.6,0.3c-0.4-0.4-1.1-0.4-1.5,0c-0.4,0.4-0.4,1.1,0,1.5l8.4,8.7H1.1C0.5,10.5,0,11,0,11.6c0,0.6,0.5,1.1,1.1,1.1h35.3l-8.4,8.7c-0.2,0.2-0.3,0.5-0.3,0.8c0,0.3,0.1,0.6,0.3,0.7c0.2,0.2,0.5,0.3,0.7,0.3c0.3,0,0.6-0.1,0.8-0.3l10.1-10.6l0,0C40.1,11.9,40,11.4,39.8,11.1z'/>
                         </svg>
                     </div>
                 </div>
                 <!-- --------- Slide show --------- -->
-                <div class="slider swiper">
-                    <div class="wrapper swiper-wrapper">
-    
+                <div class='slider swiper'>
+                    <div class='wrapper swiper-wrapper'>
                         <!-- --------- Card Staff n°1--------- -->
-                            <div class="swiper-slide slide cardStaff">
-                                <div class="imgStaff imgLoaded" style="background-image: url(./src/images/person_4.jpg)"></div>
-                                <p class="posteStaff">CEO</p>
-                                <div class="nameStaff">
-                                    <p class="firstName">Mark</p>
-                                    <p class="lastName">Roger</p>
+                            <div class='swiper-slide slide team'>
+                                <div class='team__img imgLoaded' style='background-image: url(./assets/images/person_4.jpg)'></div>
+                                <p class='team__poste'>CEO</p>
+                                <div class='team__name'>
+                                    <p class='firstName'>Mark</p>
+                                    <p class='lastName'>Roger</p>
                                 </div>
                             </div>
                         <!-- --------- Card Staff n°2--------- -->
-                            <div class="swiper-slide slide cardStaff">
-                                <div class="imgStaff imgLoaded" style="background-image: url(./src/images/person_1.jpg)"></div>
-                                <p class="posteStaff">Co-founder</p>
-                                <div class="nameStaff">
-                                    <p class="firstName">julie</p>
-                                    <p class="lastName">popoviez</p>
+                            <div class='swiper-slide slide team'>
+                                <div class='team__img imgLoaded' style='background-image: url(./assets/images/person_1.jpg)'></div>
+                                <p class='team__poste'>Co-founder</p>
+                                <div class='team__name'>
+                                    <p class='firstName'>julie</p>
+                                    <p class='lastName'>popoviez</p>
                                 </div>
                             </div>
                         <!-- --------- Card Staff n°3--------- -->
-                            <div class="swiper-slide slide cardStaff">
-                                <div class="imgStaff imgLoaded" style="background-image: url(./src/images/person_5.jpg)"></div>
-                                <p class="posteStaff">Barman</p>
-                                <div class="nameStaff">
-                                    <p class="firstName">Luc</p>
-                                    <p class="lastName">Gremnios</p>
+                            <div class='swiper-slide slide team'>
+                                <div class='team__img imgLoaded' style='background-image: url(./assets/images/person_5.jpg)'></div>
+                                <p class='team__poste'>Barman</p>
+                                <div class='team__name'>
+                                    <p class='firstName'>Luc</p>
+                                    <p class='lastName'>Gremnios</p>
                                 </div>
                             </div>
                         <!-- --------- Card Staff n°4--------- -->
-                            <div class="swiper-slide slide cardStaff">
-                                <div class="imgStaff imgLoaded" style="background-image: url(./src/images/person_3.jpg)"></div>
-                                <p class="posteStaff">Community manager</p>
-                                <div class="nameStaff">
-                                    <p class="firstName">Anaïs</p>
-                                    <p class="lastName">Rodriguez</p>
+                            <div class='swiper-slide slide team'>
+                                <div class='team__img imgLoaded' style='background-image: url(./assets/images/person_3.jpg)'></div>
+                                <p class='team__poste'>Community manager</p>
+                                <div class='team__name'>
+                                    <p class='firstName'>Anaïs</p>
+                                    <p class='lastName'>Rodriguez</p>
                                 </div>
                             </div>
-
                     </div>
                 </div>
             </div>
         </div>
-
         <!-- --------- nav footer --------- -->
-        <footer class="footerSection">
-            <div class="separator">
-                <div class="lineSquare lineSquare-blue"></div>
+        <footer class='footer__section'>
+            <div class='separator'>
+                <div class='lineSquare lineSquare--blue'></div>
             </div>
-            <nav>
-               
-                <a class="btn-nav btn-nav-blue toServices">
-                    <svg class="losange" viewBox="0 0 16 20">
-                        <path d="M8.29794 0L0.930664 9.94887L8.29794 20L15.6642 9.94887L8.29794 0ZM4.67849 9.94887L8.29794 5.22737L11.9163 9.94887L8.29794 14.7737L4.67849 9.94887Z" />
+            <nav>       
+                <a class='btn-nav btn-nav--blue toServices'>
+                    <svg class='losange' viewBox='0 0 16 20'>
+                        <path d='M8.29794 0L0.930664 9.94887L8.29794 20L15.6642 9.94887L8.29794 0ZM4.67849 9.94887L8.29794 5.22737L11.9163 9.94887L8.29794 14.7737L4.67849 9.94887Z' />
                     </svg>
                     <h3>nos services</h3>
-                </a>
-            
-                <a href="mailto:" class="btn-contact btn-contact-blue">contactez-nous</a>
+                </a>           
+                <a href='mailto:' class='btn-contact btn-contact--blue'>contactez-nous</a>
             </nav>
         </footer>
     </section>
-
     <!-- ---------| services|--------- -->
-    <section class=" allSection services" id="services">
-        <h2 class="titleSection">Nos services</h2>
+    <section class='services' id='services'>
+        <h2 class='section__title'>Nos services</h2>
 
-        <p class="servicesInfos">Lorem ipsum dolor sit amet, consectetr adipiscing elit. Viverra sed platea cras ipsum tristique facilisis. Purus penatibus risus mattis in sit duis quam. Nibh in quis neque phasellus massa aliquet enim quam.
+        <p class='services__description'>Lorem ipsum dolor sit amet, consectetr adipiscing elit. Viverra sed platea cras ipsum tristique facilisis. Purus penatibus risus mattis in sit duis quam. Nibh in quis neque phasellus massa aliquet enim quam.
             <br>
             <br>
             Lorem ipsum dolor sit amet, consectetr adipiscing elit. Viverra sed platea cras ipsum tristique facilisis. Purus penatibus risus mattis in sit duis quam. Nibh in quis neque phasellus massa aliquet enim quam.
         </p>
-       
 
-
-        <div class="containerServices">
-
+        <div class='services__wrapper'>
             <!-- services n°1 -->
-            <div class="cardService">
-                <div class="heading">
-                    <h3 class="serviceName">corporate</h3>
-                    <div class="cross"></div>
+            <div class='service'>
+                <div class='service__heading'>
+                    <h3 >corporate</h3>
+                    <div class='cross'></div>
                 </div>
 
-                <div class="content">
-                    <div class="servicePicture imgLoaded"></div>
-                    <p class="serviceDescription">
+                <div class='service__infos'>
+                    <div class='service__infos__img imgLoaded'></div>
+                    <p class='service__infos__description'>
                         Lorem ipsum dolor sit amet, consectetn  consectetur adipiscing elit. Elit tristique pharetra porta blandit. Augue a, phasellus diam non, mattis.
                         <br>
                         <br>
                         Lorem ipsum dolor sit amet, consectetn  consectetur adipiscing elit. Elit tristique pharetra porta blandit. Augue a, phasellus diam non, mattis.
                     </p>
                 </div>
-                <div class="serviceBackground imgLoaded"></div>
-                <span class="borderBottom"></span>
+                <div class='service__background imgLoaded'></div>
+                <span class='service__bottom-line'></span>
             </div>
-
             <!-- services n°2 -->
-            <div class="cardService">
-                <div class="heading">
-                    <h3 class="serviceName">gala</h3>
-                    <div class="cross"></div>
+            <div class='service'>
+                <div class='service__heading'>
+                    <h3>gala</h3>
+                    <div class='cross'></div>
                 </div>
 
-                <div class="content">
-                    <div class="servicePicture imgLoaded" style="background-image: url(./src/images/2.jpg)"></div>
-                    <p class="serviceDescription">
+                <div class='service__infos'>
+                    <div class='service__infos__img imgLoaded' style='background-image: url(./assets/images/2.jpg)'></div>
+                    <p class='service__infos__description'>
                         Lorem ipsum dolor sit amet, consectetn  consectetur adipiscing elit. Elit tristique pharetra porta blandit. Augue a, phasellus diam non, mattis.
                         <br>
                         <br>
                         Lorem ipsum dolor sit amet, consectetn  consectetur adipiscing elit. Elit tristique pharetra porta blandit. Augue a, phasellus diam non, mattis.
                     </p>
                 </div>
-                <div class="serviceBackground imgLoaded" style="background-image: url(./src/images/2.jpg)"></div>
+                <div class='service__background imgLoaded' style='background-image: url(./assets/images/2.jpg)'></div>
 
-                <span class="borderBottom"></span>
+                <span class='service__bottom-line'></span>
 
             </div>
             <!-- services n°3 -->
-            <div class="cardService">
-                <div class="heading">
-                    <h3 class="serviceName">mariage</h3>
-                    <div class="cross"></div>
+            <div class='service'>
+                <div class='service__heading'>
+                    <h3 >mariage</h3>
+                    <div class='cross'></div>
                 </div>
 
-                <div class="content">
-                    <div class="servicePicture imgLoaded" style="background-image: url(./src/images/4.jpg)"></div>
-                    <p class="serviceDescription">
+                <div class='service__infos'>
+                    <div class='service__infos__img imgLoaded' style='background-image: url(./assets/images/4.jpg)'></div>
+                    <p class='service__infos__description'>
                         Lorem ipsum dolor sit amet, consectetn  consectetur adipiscing elit. Elit tristique pharetra porta blandit. Augue a, phasellus diam non, mattis.
                         <br>
                         <br>
                         Lorem ipsum dolor sit amet, consectetn  consectetur adipiscing elit. Elit tristique pharetra porta blandit. Augue a, phasellus diam non, mattis.
                     </p>
                 </div>
-                <div class="serviceBackground imgLoaded" style="background-image: url(./src/images/4.jpg)"></div>
-                <span class="borderBottom"></span>
+                <div class='service__background imgLoaded' style='background-image: url(./assets/images/4.jpg)'></div>
+                <span class='service__bottom-line'></span>
 
             </div>
             <!-- services n°4 -->
-            <div class="cardService">
-                <div class="heading">
-                    <h3 class="serviceName">privé</h3>
-                    <div class="cross"></div>
+            <div class='service'>
+                <div class='service__heading'>
+                    <h3 >privé</h3>
+                    <div class='cross'></div>
                 </div>
 
-                <div class="content">
-                    <div class="servicePicture imgLoaded" style="background-image: url(./src/images/1.jpg)"></div>
-                    <p class="serviceDescription">
+                <div class='service__infos'>
+                    <div class='service__infos__img imgLoaded' style='background-image: url(./assets/images/1.jpg)'></div>
+                    <p class='service__infos__description'>
                         Lorem ipsum dolor sit amet, consectetn  consectetur adipiscing elit. Elit tristique pharetra porta blandit. Augue a, phasellus diam non, mattis.
                         <br>
                         <br>
                         Lorem ipsum dolor sit amet, consectetn  consectetur adipiscing elit. Elit tristique pharetra porta blandit. Augue a, phasellus diam non, mattis.
                     </p>
                 </div>
-                <div class="serviceBackground imgLoaded" style="background-image: url(./src/images/1.jpg)"></div>
-                <span class="borderBottom"></span>
+                <div class='service__background imgLoaded' style='background-image: url(./assets/images/1.jpg)'></div>
+                <span class='service__bottom-line'></span>
 
             </div>
-
-           
         </div>
 
         <!-- --------- nav footer --------- -->
-        <footer class="footerSection">
-            <div class="separator">
-                <div class="lineSquare lineSquare-beige"></div>
+        <footer class='footer__section'>
+            <div class='separator'>
+                <div class='lineSquare lineSquare--beige'></div>
             </div>
             <nav>
-                <a class="btn-nav btn-nav-beige toContact">
-                    <svg class="losange" viewBox="0 0 16 20">
-                        <path d="M8.29794 0L0.930664 9.94887L8.29794 20L15.6642 9.94887L8.29794 0ZM4.67849 9.94887L8.29794 5.22737L11.9163 9.94887L8.29794 14.7737L4.67849 9.94887Z" />
+                <a class='btn-nav btn-nav--beige toContact'>
+                    <svg class='losange' viewBox='0 0 16 20'>
+                        <path d='M8.29794 0L0.930664 9.94887L8.29794 20L15.6642 9.94887L8.29794 0ZM4.67849 9.94887L8.29794 5.22737L11.9163 9.94887L8.29794 14.7737L4.67849 9.94887Z' />
                     </svg>
                     <h3>contact</h3>
                 </a>
             
-                <a href="mailto:" class="btn-contact btn-contact-beige">contactez-nous</a>
+                <a href='mailto:' class='btn-contact btn-contact--beige'>contactez-nous</a>
             </nav>
         </footer>
     </section>
-
      <!-- ---------| contact |--------- -->
-    <section class=" allSection contact" id="contact">   
-        <h2 class="titleSection">Parlons en</h2>
+    <section class='contact' id='contact'>   
+        <h2 class='section__title'>Parlons en</h2>
       
-        <div class="contentContact contentContact-left">
-            <div class="partUp">
+        <div class='contact__infos contact__infos--left'>
+            <div class='contact__infos--up'>
                 <address>
                     <h3>Mizaru</h3>
-                    <p  style="white-space:pre-line">170 avenue des coquelicots 
+                    <p>170 avenue des coquelicots 
                         1000 Bruxelles</p>
                 </address>
                     
                 <div>
                     <h3>Suivez nous</h3>
                     <ul>
-                        <li><a target="_blank" href="https://www.facebook.com/search/top?q=sanzaru">Facebook</a></li>
-                        <li><a target="_blank" href="https://www.instagram.com/sanzaru/">Instagram</a></li>
+                        <li><a target='_blank' href='https://www.facebook.com/search/top?q=sanzaru'>Facebook</a></li>
+                        <li><a target='_blank' href='https://www.instagram.com/sanzaru/'>Instagram</a></li>
                     </ul>
                 </div>
             </div>
         
-            <div class="partDown">
+            <div class='contact__infos--down'>
                 <h3>Notre restaurant</h3>
-                <p><a target="_blank" href="https://www.sanzaru.be/" target="_blank">www.SANZARU.be</a></p>
+                <p><a target='_blank' href='https://www.sanzaru.be/' target='_blank'>www.SANZARU.be</a></p>
             </div>
-        </div>
-        
-        <div class="contentContact contentContact-right">
-            <address class="partUp">
+        </div>      
+        <div class='contact__infos contact__infos--right'>
+            <address class='contact__infos--up'>
                 <h3>Restons en contact</h3>
-                <a href="mailto:info@mizau.be">info@mizau.be</a>
-                <a href="tel:02324564892">02 324 56 48 92</a>
+                <a href='mailto:info@mizau.be'>info@mizau.be</a>
+                <a href='tel:02324564892'>02 324 56 48 92</a>
             </address>
-            <div class="partDown">
+            <div class='contact__infos--down'>
                 <h3>Menu</h3>
                 <ul>
-                    <li><a class="toHome">accueil</a></li>
-                    <li><a class="toAbout">à propos</a></li>
-                    <li><a class="toServices">services</a></li>
+                    <li><a class='toHome'>accueil</a></li>
+                    <li><a class='toAbout'>à propos</a></li>
+                    <li><a class='toServices'>services</a></li>
                 </ul>
             </div>
         </div>
-
         <!-- --------- nav footer --------- -->
-        <footer class="footerSection">
-            <div class="separator">
-                <div class="lineSquare lineSquare-blue"></div>
+        <footer class='footer__section'>
+            <div class='separator'>
+                <div class='lineSquare lineSquare--blue'></div>
             </div>
             <nav>
-                <a class="btn-nav btn-nav-blue toHome">
-                    <svg class="losange" viewBox="0 0 16 20">
-                        <path d="M8.29794 0L0.930664 9.94887L8.29794 20L15.6642 9.94887L8.29794 0ZM4.67849 9.94887L8.29794 5.22737L11.9163 9.94887L8.29794 14.7737L4.67849 9.94887Z" />
+                <a class='btn-nav btn-nav--blue toHome'>
+                    <svg class='losange' viewBox='0 0 16 20'>
+                        <path d='M8.29794 0L0.930664 9.94887L8.29794 20L15.6642 9.94887L8.29794 0ZM4.67849 9.94887L8.29794 5.22737L11.9163 9.94887L8.29794 14.7737L4.67849 9.94887Z' />
                     </svg>
                     <h3>back to top</h3>
                 </a>
                 
                
-                <a href="mailto:" class="btn-contact btn-contact-blue">contactez-nous</a>
+                <a href='mailto:' class='btn-contact btn-contact--blue'>contactez-nous</a>
             </nav>
         </footer>
-
         <!-- --------- monkey background --------- -->
-        <div class="backgroundContact imgLoaded"></div>
+        <div class='contact__background imgLoaded'></div>
     </section>
-
      <!-- ---------| footer |--------- -->
-    <footer class="informationsFooter">
-        <a href="">conditions générales</a>
-        <a href="">vie privée</a>
-        <p>mizaru 2022 ©designed and powererd by <a target="_blank" href="https://www.wibicom.be/">wibicom</a></p>  
+    <footer class='page__footer'>
+        <a href=''>conditions générales</a>
+        <a href=''>vie privée</a>
+        <p>mizaru 2022 ©designed and powererd by <a target='_blank' href='https://www.wibicom.be/'>wibicom</a></p>  
     </footer>
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollToPlugin.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollToPlugin.min.js'></script>
 
-    <script type="module" src="./src/js/main.js"></script>
+    <script type='module' src='./assets/js/main.js'></script>
     
 </body>
 </html>

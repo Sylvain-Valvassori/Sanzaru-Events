@@ -1,0 +1,140 @@
+@use '../../library' as *;
+
+
+.home{
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 0;
+    left: 0;
+
+    header {
+        z-index: $second-plan;
+        width: 100%;
+        height: fit-content;
+
+        align-self: flex-start;
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+        align-items: center;
+
+        .logo-SE{
+            justify-self: start;
+            height: 4rem;
+
+            img{
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                object-position: center center;
+            }
+        }
+        .pictoMonkey{
+            width: 12rem;
+            aspect-ratio: 1;
+            @include max-mq('tablet'){
+                width: 6rem;
+                justify-self: end;
+
+            }
+        }
+        nav {
+            justify-self: end;
+
+            height: 2rem;
+            
+            display:flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            gap: 2rem;
+
+            a{
+                font-size: 1.6rem;
+                font-family: $fnt-main;
+                text-transform: uppercase;
+
+                transition: color 300ms;
+                &:first-child{
+                    margin: 0;
+                }
+                &:hover{
+                    color: $clr-cuivre;
+                } 
+            }
+
+            @include max-mq('tablet'){
+                display: none;
+            }
+        }
+
+        @include max-mq('tablet'){
+            grid-template-columns: 50% 50%;
+        }
+    }
+
+    h2{
+        z-index: $second-plan;
+        width: clamp( 70rem, 100%, 100rem);
+    
+        text-align: center;
+        font-size: 8.4rem;
+        font-family: "Stolzl-Book";
+        line-height: 10.1rem;
+        letter-spacing: 1.65rem;
+        text-transform: uppercase;
+
+        @include max-mq('tablet'){
+            font-size: 4rem;
+            line-height: 6rem;
+            letter-spacing: 1rem;
+        }
+        @include max-mq('tablet-XL'){
+            font-size: 6rem;
+            line-height: 8rem;
+            letter-spacing: 1.2rem;
+        }
+    }
+
+    &__background{
+        z-index: $last-plan;
+        
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        background-image: url(../images/1.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        .layerColor {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+            background-color: rgba( $clr-light-blue, .5);
+
+            &::before{
+                content: "";
+                position: absolute;
+                top: -54rem;
+                left: -154rem;
+                width: 298rem;
+                height: 300rem;
+
+
+                background: radial-gradient(
+                                47.97% 47.97% at 52.03% 50%,
+                                $clr-dark-blue 0%, 
+                                rgba(35, 45, 64, 0) 59.9%);
+            }
+        }
+
+    }
+}

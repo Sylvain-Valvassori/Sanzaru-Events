@@ -1,0 +1,53 @@
+@use '../../library' as *;
+
+
+// ----| Bouton navigation dans le footer de section |----
+.btn-nav{
+    display: flex;
+    justify-items: center;
+    align-items: flex-end;
+    gap: 1rem;
+    
+    .losange{
+        width: 1.473rem;
+        height: 2rem;
+    }
+    h3{
+        font-size: 1.4rem;
+        text-transform: uppercase;
+    }
+    &:hover { 
+        .losange{
+            fill: $clr-cuivre;
+        }
+        h3{
+            color: $clr-cuivre;
+        }
+    }
+    &--beige{
+        .losange{
+            fill: $clr-light-beige;
+        }
+        h3{
+            color: $clr-light-beige;
+        }
+    }
+    &--blue{
+        .losange{
+            fill: $clr-light-blue;
+        }
+        h3{
+            color: $clr-light-blue;
+        }
+    }
+
+    @include max-mq('tablet'){
+        .losange{
+            width: 1.2rem;
+            height: 1.4rem;
+        }
+        h3{
+            font-size: 1.2rem;
+        }
+    }
+}

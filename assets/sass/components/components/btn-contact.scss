@@ -1,0 +1,41 @@
+@use '../../library' as *;
+
+
+// ----| Bouton Contact |----
+.btn-contact{
+
+    padding: 1.5rem 3rem;
+    border-radius: 4rem;
+
+    font-size: 1.4rem;
+    font-family: $fnt-main;
+    text-transform: uppercase;
+
+    transition: background-color 300ms, color 300ms;
+
+    &--beige{
+        border: solid .1rem $clr-dark-beige;
+        color: $clr-dark-beige;
+
+        &:hover{
+            color: $clr-dark-blue;
+            background-color: $clr-dark-beige;
+        }
+    }
+    &--blue{
+        border: solid .1rem $clr-dark-blue;
+        color: $clr-dark-blue;
+
+        &:hover{
+            color: $clr-light-beige;
+            background-color: $clr-dark-blue;
+        }
+    }
+
+    @include max-mq('tablet'){
+        padding: 0.75rem 1.5rem;
+        border-radius: 4rem;
+    
+        font-size: 1.2rem;
+    }
+}

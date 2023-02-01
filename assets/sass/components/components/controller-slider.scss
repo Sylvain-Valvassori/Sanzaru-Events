@@ -1,0 +1,40 @@
+@use '../../library' as *;
+
+
+
+// ----| Controller slides show & arrow|----
+.controller-slider{
+    
+    max-width: 8rem;
+    height: fit-content;
+    margin-right: 4rem;
+    padding-bottom: 2rem;
+
+
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+
+    .arrow{
+        cursor: pointer;
+        
+        width:2rem;
+        aspect-ratio: 1;
+       
+        fill: $clr-dark-blue;
+        transition: fill 300ms;
+        
+        &:last-child{
+            margin-left: 2rem;
+        }
+        
+        &:hover{
+            fill: $clr-electric-blue;
+        }
+        &.swiper-button-disabled {
+            cursor: inherit;
+            fill: rgba($clr-dark-blue, .3);
+        }
+    }
+}
